@@ -1,24 +1,24 @@
 .courses {
-    .button-group{
-        @extend .flex-column;
-        width: 120px;
-        position: sticky;
-        bottom: 5%;
-        left: 100%;
+    // .button-group{
+    //     @extend .flex-column;
+    //     width: 120px;
+    //     position: sticky;
+    //     bottom: 5%;
+    //     left: 100%;
         
 
-        .float-button {
-            background-color: var(--verde-oscuro);
-            color: #fff;
-            padding: 5px;
-            border-radius: 7%;
-            text-decoration: none;
-            font-family: $fuente-contenido;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin: 10px 0;
-        }
-    }
+    //     .float-button {
+    //         background-color: var(--verde-oscuro);
+    //         color: #fff;
+    //         padding: 5px;
+    //         border-radius: 7%;
+    //         text-decoration: none;
+    //         font-family: $fuente-contenido;
+    //         font-weight: bold;
+    //         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    //         margin: 10px 0;
+    //     }
+    // }
     .courses_content {
         width: 600px;
         @extend .flex-column;
@@ -36,21 +36,21 @@
 
         }
 
-        .courses_card-elem {
-            animation-delay: 1s;
-        }
+        // .courses_card-elem {
+        //     animation-delay: 1s;
+        // }
 
-        .courses_card-inter {
-            animation-delay: 1s;
-        }
+        // .courses_card-inter {
+        //     animation-delay: 1s;
+        // }
 
-        .courses_card-adv {
-            animation-delay: 1.5s;
-        }
+        // .courses_card-adv {
+        //     animation-delay: 1.5s;
+        // }
 
-        .courses_card-exam {
-            animation-delay: 1.5s;
-        }
+        // .courses_card-exam {
+        //     animation-delay: 1.5s;
+        // }
     }
 }
 

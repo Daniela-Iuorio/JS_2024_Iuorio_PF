@@ -20,7 +20,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon-32x32.png">
     <!-- JavaScript -->
-    <script defer src="../js/script.js"></script>
+    <script defer src="../js/contacto.js"></script>
 </head>
 
 <body>
@@ -67,34 +67,38 @@
                 <h1>CONTACTO</h1>
             </div>
             <form action="#" method="get" class="contact-form">
-                <label for="text">Nombre y apellido</label>
-                <input class="form-item" type="text" placeholder="Jhon Doe" name="nombre-apellido">
+                <label for="nombre">Nombre y apellido</label>
+                <input id="nombre" class="form-item" type="text" placeholder="Jhon Doe" name="nombre-apellido">
 
                 <label for="email"> Dirección de correo electrónico</label>
-                <input class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
+                <input id="email" class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
                     name="email-usuario">
 
-                <label for="tel">Número de teléfono</label>
-                    <input class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
+                <label for="cel">Número de teléfono</label>
+                <input id="cel" class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
 
-                <div id="curso-elegido" class="form-item sin-borde">
-                    <label for="curso" class="contact-form-item sin-borde">Curso seleccionado: </label>
-                </div>
+                <p class="form-p" id="form-curso-select">Curso seleccionado: </p>
 
+                <label for="cantidad-horas">Carga horaria: </label>
+                <select name="carga-horaria" id="cantidad-horas">
+                    
+                </select>
+
+                <p class="form-p">Forma de pago:</p>
                 <div id="pago" class="form-item sin-borde">
-                    <label for="pago" class="contact-form-item sin-borde">Forma de pago: </label>
-                    <input type="radio" id="semanal" name="semanal" value="">
+                    <input class="opcion-pago" type="radio" id="semanal" name="semanal" value="">
                     <label for="semanal">Semana</label>
-                    <input type="radio" id="mensual" name="mensual" value="">
+                    <input class="opcion-pago" type="radio" id="mensual" name="mensual" value="">
                     <label for="mensual">Mes (-10%)</label>
-                    <input type="radio" id="tres-meses" name="tres-meses" value="">
+                    <input class="opcion-pago" type="radio" id="tres-meses" name="tres-meses" value="">
                     <label for="tres-meses">Trimestre (-20%)</label>
                 </div>
-                
+                <p class="form-p" id="form-total">Total a pagar: </p>
                 <div class="form-item sin-borde">
-                    <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email.
-                <input class="contact-form-item contact_button sin-borde" type="submit" value="Enviar">
-            </div>
+                    <!-- <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email. -->
+                    <input id="botonEnviar" class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
+                        value="Enviar">
+                </div>
             </form>
             <div class="email-phone-time animate__animated animate__fadeInUp">
                 <ul>

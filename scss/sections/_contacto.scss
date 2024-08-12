@@ -7,9 +7,12 @@
         margin: 0 auto;
         background-color: #ededed;
 
-        label{
+        label {
             padding-left: 5px;
+            font-family: $fuente-contenido;
+            font-size: 18px;
         }
+
         .form-item {
             display: block;
             margin: 5px;
@@ -17,28 +20,40 @@
             padding: 5px;
             border: none;
             border-bottom: 2px solid var(--verde-oscuro);
-            
-            .contact-form-item{
+
+            .contact-form-item {
                 display: inline;
             }
-            .form-select{
+
+            .form-select {
                 width: auto;
             }
+
             .contact_button {
                 @extend button;
+                width: 100%;
             }
-            
+
         }
-        .sin-borde{
+
+        .sin-borde {
             border: none;
-            }
+        }
+
+        .form-p {
+            margin: 10px 5px 10px 0px;
+        }
+
+        .resaltado {
+            font-weight: bold;
+        }
 
 
         textarea {
             height: 200px;
         }
 
-        
+
     }
 
     .email-phone-time {
@@ -80,7 +95,8 @@
     .contact {
         .contact-form {
             width: auto;
-            .form-item{
+
+            .form-item {
 
                 .contact_button {
                     display: block;
@@ -91,13 +107,12 @@
 }
 
 @media (min-width: 601px) {
-    .contact{
-        .contact-form{
-            .contact_button{
+    .contact {
+        .contact-form {
+            .contact_button {
                 position: sticky;
                 left: 95%;
             }
         }
     }
 }
-

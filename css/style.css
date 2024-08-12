@@ -16,7 +16,7 @@
   align-items: center;
   flex-wrap: wrap; }
 
-.flex-column, .home .home-content .news-box, .courses .button-group, .courses .courses_content, .courses .courses_content .courses_card, .comunidad .comunidad-content .mision, .comunidad .comunidad-content .redes, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
+.flex-column, .home .home-content .news-box, .courses .courses_content, .courses .courses_content .courses_card, .comunidad .comunidad-content .mision, .comunidad .comunidad-content .redes, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,22 +139,6 @@ footer {
     .home .home-content .welcome-box p {
       margin: 20px; } }
 
-.courses .button-group {
-  width: 120px;
-  position: sticky;
-  bottom: 5%;
-  left: 100%; }
-  .courses .button-group .float-button {
-    background-color: var(--verde-oscuro);
-    color: #fff;
-    padding: 5px;
-    border-radius: 7%;
-    text-decoration: none;
-    font-family: "Alegreya Sans", sans-serif;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 10px 0; }
-
 .courses .courses_content {
   width: 600px;
   margin: 0 auto; }
@@ -163,14 +147,6 @@ footer {
     width: auto; }
     .courses .courses_content .courses_card p {
       text-align: justify; }
-  .courses .courses_content .courses_card-elem {
-    animation-delay: 1s; }
-  .courses .courses_content .courses_card-inter {
-    animation-delay: 1s; }
-  .courses .courses_content .courses_card-adv {
-    animation-delay: 1.5s; }
-  .courses .courses_content .courses_card-exam {
-    animation-delay: 1.5s; }
 
 @media (max-width: 600px) {
   .courses .courses_content {
@@ -263,7 +239,9 @@ footer {
   margin: 0 auto;
   background-color: #ededed; }
   .contact .contact-form label {
-    padding-left: 5px; }
+    padding-left: 5px;
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 18px; }
   .contact .contact-form .form-item {
     display: block;
     margin: 5px;
@@ -275,8 +253,14 @@ footer {
       display: inline; }
     .contact .contact-form .form-item .form-select {
       width: auto; }
+    .contact .contact-form .form-item .contact_button {
+      width: 100%; }
   .contact .contact-form .sin-borde {
     border: none; }
+  .contact .contact-form .form-p {
+    margin: 10px 5px 10px 0px; }
+  .contact .contact-form .resaltado {
+    font-weight: bold; }
   .contact .contact-form textarea {
     height: 200px; }
 
