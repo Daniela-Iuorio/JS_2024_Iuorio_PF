@@ -1,0 +1,71 @@
+.comunidad {
+    
+    .comunidad-content{
+        width: 600px;
+        margin: 0 auto;
+
+    h2{
+        animation-delay: 1s;
+        text-align: center;
+    }
+
+    .mision {
+        @extend .flex-column;
+        padding: 10px;
+        animation-delay: 1.5s;
+
+        p {
+            text-align: justify;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        img {
+            width: 70%;
+        }
+    }
+
+    .h2-redes{
+        animation-delay: 2s;
+    }
+
+    .redes {
+        @extend .flex-column;
+
+        .redes_social {
+            background-color: rgba(0, 0, 0, 0.233);
+            width: 70%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+            @extend .flex-row;
+            justify-content: space-evenly;
+            animation-delay: 2.5s;
+
+            .redes_social-link {
+                color: rgba(0, 0, 0, 0.767);
+                font-size: 30px
+            }
+        }
+
+        .reddit {
+            border-radius: 10px;
+            box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+            overflow: hidden;
+            margin: 20px;
+            animation-delay: 2.5s;
+        }
+    }
+}
+}
+
+
+// Media Queries
+
+@media (max-width: 600px){
+    .comunidad{
+        .comunidad-content{
+            width: auto;
+        }
+    }
+}

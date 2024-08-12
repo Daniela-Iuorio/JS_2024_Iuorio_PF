@@ -1,0 +1,145 @@
+.nosotros {
+    .nosotros-content {
+        width: 600px;
+        margin: 0 auto;
+
+        h2 {
+            animation-delay: 1s;
+        }
+
+        .historia {
+            p {
+                text-align: justify;
+                padding: 5px;
+                margin: 5px;
+                animation-delay: 1.5s;
+            }
+        }
+
+        .h2-staff {
+            animation-delay: 2s;
+        }
+
+        #carouselExample {
+            animation-delay: 2.5s;
+
+            .carousel-indicators {
+                button {
+                    background-color: black;
+                }
+            }
+
+            .carousel-inner {
+                .carousel-item {
+                    .teacher {
+                        height: 400px;
+                        @extend .flex-column;
+                        justify-content: flex-end;
+                        .teacher-div{
+                        margin: 20px;
+                        background-color: #f8d9ab;
+                        border-radius: 10px;
+                        padding: 10px;
+                        }
+                        h3 {
+                            padding: 5px;
+                            margin: 30px 5px 10px 5px;
+                            text-align: center;
+                        }
+
+                        p {
+                            padding: 5px;
+                            margin: 10px;
+                            text-align: justify;
+                        }
+
+                        img {
+                            padding: 5px;
+                            margin: 10px;
+                            width: 140px;
+                            position: absolute;
+                            top: 4%;
+                            border-radius: 66px;
+                            border: solid 2px var(--verde-oscuro);
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+
+            button {
+                box-shadow: none;
+
+            }
+
+        }
+    }
+}
+
+// Media Queries
+
+@media (max-width: 600px) {
+    .nosotros {
+        .nosotros-content {
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 320px){
+    .nosotros{
+        .nosotros-content{
+            #carouselExample{
+                .carousel-inner{
+                    .carousel-item{
+                        .teacher{
+                            height: 600px;
+                            img{
+                                top: 0%
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 321px) and (max-width:375px){
+    .nosotros{
+        .nosotros-content{
+            #carouselExample{
+                .carousel-inner{
+                    .carousel-item{
+                        .teacher{
+                            height: 500px;
+                            img{
+                                top: 0%
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 376px) and (max-width:425px){
+    .nosotros{
+        .nosotros-content{
+            #carouselExample{
+                .carousel-inner{
+                    .carousel-item{
+                        .teacher{
+                            height: 470px;
+                            img{
+                                top: -1%
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
