@@ -62,6 +62,7 @@ h2 {
 p, li, input{
     font-family: $fuente-contenido;
     font-size: large;
+    text-align: justify;
 }
 
 @media (max-width: 425px) {

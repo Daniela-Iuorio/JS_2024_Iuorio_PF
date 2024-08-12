@@ -60,7 +60,8 @@ h2 {
 
 p, li, input {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: large; }
+  font-size: large;
+  text-align: justify; }
 
 @media (max-width: 425px) {
   h2 {

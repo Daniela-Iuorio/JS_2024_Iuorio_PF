@@ -41,7 +41,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./cursos.html">Cursos</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="./recursos.html">Recursos</a>
                         </li>
                         <li class="nav-item">
@@ -49,7 +49,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./comunidad.html">Comunidad</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link disabled" aria-disabled="true" href="./contacto.html">Contacto</a>
                         </li>
@@ -66,26 +66,31 @@
             <div class="backdrop-h1">
                 <h1>CONTACTO</h1>
             </div>
-            <form action="#" method="get" class="contact-form animate__animated animate__fadeIn">
+            <form action="#" method="get" class="contact-form">
                 <label for="text">Nombre y apellido</label>
                 <input class="form-item" type="text" placeholder="Jhon Doe" name="nombre-apellido">
+
                 <label for="email"> Dirección de correo electrónico</label>
                 <input class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
                     name="email-usuario">
+
                 <label for="tel">Número de teléfono</label>
                     <input class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
-                <div class="form-item sin-borde">
-                    <label for="curso" class="contact-form-item sin-borde">Curso de interés:</label>
-                    <select class="contact-form-item form-select" name="Curso">
-                        <option value="Elem">Elementary</option>
-                        <option value="Inter">Intermediate</option>
-                        <option value="Adv">Advanced</option>
-                        <option value="Exam">Exam training</option>
-                    </select>
+
+                <div id="curso-elegido" class="form-item sin-borde">
+                    <label for="curso" class="contact-form-item sin-borde">Curso seleccionado: </label>
                 </div>
 
-                <textarea name="comentario" placeholder="Contanos cómo podemos ayudarte."
-                    class="form-item comentario"></textarea>
+                <div id="pago" class="form-item sin-borde">
+                    <label for="pago" class="contact-form-item sin-borde">Forma de pago: </label>
+                    <input type="radio" id="semanal" name="semanal" value="">
+                    <label for="semanal">Semana</label>
+                    <input type="radio" id="mensual" name="mensual" value="">
+                    <label for="mensual">Mes (-10%)</label>
+                    <input type="radio" id="tres-meses" name="tres-meses" value="">
+                    <label for="tres-meses">Trimestre (-20%)</label>
+                </div>
+                
                 <div class="form-item sin-borde">
                     <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email.
                 <input class="contact-form-item contact_button sin-borde" type="submit" value="Enviar">
