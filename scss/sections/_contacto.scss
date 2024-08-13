@@ -1,12 +1,12 @@
 .contact {
 
-    
+
     .contact-content {
-        
+
         #mensaje-resumen {
             width: 80%;
             margin-top: 10px;
-    
+
             .parrafo-mensaje {
                 text-align: justify;
             }
@@ -102,13 +102,15 @@
 
 @media (max-width: 600px) {
     .contact {
-        .contact-form {
-            width: auto;
+        .contact-content {
+            .contact-form {
+                width: auto;
 
-            .form-item {
+                .form-item {
 
-                .contact_button {
-                    display: block;
+                    .contact_button {
+                        display: block;
+                    }
                 }
             }
         }

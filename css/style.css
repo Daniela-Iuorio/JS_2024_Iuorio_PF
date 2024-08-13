@@ -300,9 +300,9 @@ footer {
     align-items: center; } }
 
 @media (max-width: 600px) {
-  .contact .contact-form {
+  .contact .contact-content .contact-form {
     width: auto; }
-    .contact .contact-form .form-item .contact_button {
+    .contact .contact-content .contact-form .form-item .contact_button {
       display: block; } }
 
 @media (min-width: 601px) {
