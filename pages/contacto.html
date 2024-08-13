@@ -70,25 +70,27 @@
             <div id="mensaje-resumen"></div>
             <!-- FORMULARIO de Inscripción -->
             <form action="" method="post" class="contact-form" id="enrole-form">
+                <p id="warning"></p>
+
                 <label for="nombre">Nombre</label>
-                <input id="nombre" class="form-item" type="text" placeholder="Jhon" name="nombre">
+                <input id="nombre" class="form-item campo-completo" type="text" placeholder="Jhon" name="nombre">
                 
                 <label for="apellido">Apellido</label>
-                <input id="apellido" class="form-item" type="text" placeholder="Doe" name="apellido">
+                <input id="apellido" class="form-item campo-completo" type="text" placeholder="Doe" name="apellido">
 
                 <label for="email"> Dirección de correo electrónico</label>
-                <input id="email" class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
+                <input id="email" class="form-item contact_input-email campo-completo" type="email" placeholder="correo@mail.com"
                     name="email-usuario">
 
                 <label for="cel">Número de teléfono</label>
-                <input id="cel" class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
+                <input id="cel" class="form-item campo-completo" type="tel" placeholder="+54 9 11 13212312" name="celular">
 
                 <!--  CURSO Seleccionado -->
                 <p class="form-p" id="form-curso-select">Curso seleccionado: </p>
 
                 <!-- Opciones de CARGA HORARIA -->
                 <label for="cantidad-horas">Carga horaria: </label>
-                <select name="carga-horaria" id="cantidad-horas">
+                <select name="carga-horaria" id="cantidad-horas" class="campo-completo">
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="1">1 hora semanal</option>
                     <option value="2">2 horas semanales</option>
@@ -98,7 +100,7 @@
                 <!--  FORMAS de PAGO -->
                 <div class="display-block">
                     <label for="forma-pago">Paquete de clases: </label>
-                    <select name="pago" id="forma-pago">
+                    <select name="pago" id="forma-pago" class="campo-completo">
                         <option value="" disabled selected>Seleccione una opción</option>
                         <option value="semanal">Semanal</option>
                         <option value="mensual">Mensual (-10%)</option>
@@ -106,6 +108,7 @@
                     </select>
                 </div>
 
+                <p id="warning2"></p>
                 <!--  TOTAL a pagar -->
                 <p class="form-p" id="form-total">Total a pagar: </p>
 

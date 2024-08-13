@@ -19,6 +19,13 @@
             margin: 0 auto;
             background-color: #ededed;
 
+            .warning{
+                font-family: $fuente-contenido;
+                font-size: 16px;
+                color: red;
+                font-weight: 400;
+            }
+
             label {
                 padding-left: 5px;
                 font-family: $fuente-contenido;
