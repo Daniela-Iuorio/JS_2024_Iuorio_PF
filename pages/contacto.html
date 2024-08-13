@@ -66,9 +66,15 @@
             <div class="backdrop-h1">
                 <h1>CONTACTO</h1>
             </div>
-            <form action="#" method="get" class="contact-form">
-                <label for="nombre">Nombre y apellido</label>
-                <input id="nombre" class="form-item" type="text" placeholder="Jhon Doe" name="nombre-apellido">
+            <div class="contact-content flex-column">
+            <div id="mensaje-resumen"></div>
+            <!-- FORMULARIO de Inscripción -->
+            <form action="" method="post" class="contact-form" id="enrole-form">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-item" type="text" placeholder="Jhon" name="nombre">
+                
+                <label for="apellido">Apellido</label>
+                <input id="apellido" class="form-item" type="text" placeholder="Doe" name="apellido">
 
                 <label for="email"> Dirección de correo electrónico</label>
                 <input id="email" class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
@@ -77,27 +83,36 @@
                 <label for="cel">Número de teléfono</label>
                 <input id="cel" class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
 
+                <!--  CURSO Seleccionado -->
                 <p class="form-p" id="form-curso-select">Curso seleccionado: </p>
 
+                <!-- Opciones de CARGA HORARIA -->
                 <label for="cantidad-horas">Carga horaria: </label>
                 <select name="carga-horaria" id="cantidad-horas">
-                    
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="1">1 hora semanal</option>
+                    <option value="2">2 horas semanales</option>
+                    <option value="3">3 horas semanales</option>
                 </select>
 
-                <p class="form-p">Forma de pago:</p>
-                <div id="pago" class="form-item sin-borde">
-                    <input class="opcion-pago" type="radio" id="semanal" name="semanal" value="">
-                    <label for="semanal">Semana</label>
-                    <input class="opcion-pago" type="radio" id="mensual" name="mensual" value="">
-                    <label for="mensual">Mes (-10%)</label>
-                    <input class="opcion-pago" type="radio" id="tres-meses" name="tres-meses" value="">
-                    <label for="tres-meses">Trimestre (-20%)</label>
+                <!--  FORMAS de PAGO -->
+                <div class="display-block">
+                    <label for="forma-pago">Paquete de clases: </label>
+                    <select name="pago" id="forma-pago">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensual">Mensual (-10%)</option>
+                        <option value="trimestral">Trimestral (-15%)</option>
+                    </select>
                 </div>
+
+                <!--  TOTAL a pagar -->
                 <p class="form-p" id="form-total">Total a pagar: </p>
+
+                <!-- Botón de ENVIAR -->
                 <div class="form-item sin-borde">
-                    <!-- <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email. -->
-                    <input id="botonEnviar" class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
-                        value="Enviar">
+                    <input id="botonEnviar" class="contact-form-item contact_button sin-borde btn btn-outline-success"
+                        type="submit" value="Enviar">
                 </div>
             </form>
             <div class="email-phone-time animate__animated animate__fadeInUp">
@@ -116,6 +131,7 @@
                 Horario de atención: Lunes a Viernes de 9 a 18hs</p>
         </main>
     </div>
+</div>
     <footer>
         <p class="footer_text">© 2024 English Connection. All rights reserved.</p>
     </footer>

@@ -10,6 +10,12 @@
   padding: 0;
   box-sizing: border-box; }
 
+.display-block {
+  display: block; }
+
+.no-display {
+  display: none; }
+
 .flex-row, .comunidad .comunidad-content .redes .redes_social {
   display: flex;
   justify-content: center;
@@ -22,7 +28,10 @@
   justify-content: center;
   align-items: center; }
 
-button, .contact .contact-form .form-item .contact_button {
+.resaltado {
+  font-weight: bold; }
+
+button, .contact .contact-content .contact-form .form-item .contact_button {
   border-radius: 5px;
   border: transparent;
   padding: 5px;
@@ -232,51 +241,55 @@ footer {
   .comunidad .comunidad-content {
     width: auto; } }
 
-.contact .contact-form {
+.contact .contact-content #mensaje-resumen {
+  width: 80%;
+  margin-top: 10px; }
+  .contact .contact-content #mensaje-resumen .parrafo-mensaje {
+    text-align: justify; }
+
+.contact .contact-content .contact-form {
   width: 600px;
   padding: 10px;
   animation-delay: 1s;
   margin: 0 auto;
   background-color: #ededed; }
-  .contact .contact-form label {
+  .contact .contact-content .contact-form label {
     padding-left: 5px;
     font-family: "Alegreya Sans", sans-serif;
     font-size: 18px; }
-  .contact .contact-form .form-item {
+  .contact .contact-content .contact-form .form-item {
     display: block;
     margin: 5px;
     width: 90%;
     padding: 5px;
     border: none;
     border-bottom: 2px solid var(--verde-oscuro); }
-    .contact .contact-form .form-item .contact-form-item {
+    .contact .contact-content .contact-form .form-item .contact-form-item {
       display: inline; }
-    .contact .contact-form .form-item .form-select {
+    .contact .contact-content .contact-form .form-item .form-select {
       width: auto; }
-    .contact .contact-form .form-item .contact_button {
+    .contact .contact-content .contact-form .form-item .contact_button {
       width: 100%; }
-  .contact .contact-form .sin-borde {
+  .contact .contact-content .contact-form .sin-borde {
     border: none; }
-  .contact .contact-form .form-p {
+  .contact .contact-content .contact-form .form-p {
     margin: 10px 5px 10px 0px; }
-  .contact .contact-form .resaltado {
-    font-weight: bold; }
-  .contact .contact-form textarea {
+  .contact .contact-content .contact-form textarea {
     height: 200px; }
 
-.contact .email-phone-time {
+.contact .contact-content .email-phone-time {
   display: flex;
   justify-content: center;
   animation-delay: 1.5s; }
-  .contact .email-phone-time ul {
+  .contact .contact-content .email-phone-time ul {
     margin: 10px;
     padding: 0px; }
-    .contact .email-phone-time ul li {
+    .contact .contact-content .email-phone-time ul li {
       margin: 10px;
       padding: 0px;
       list-style-type: none; }
 
-.contact .horario-atencion {
+.contact .contact-content .horario-atencion {
   margin: 15px;
   text-align: center;
   animation-delay: 2s; }
@@ -311,7 +324,7 @@ footer {
     animation-delay: 2s; }
   .nosotros .nosotros-content #carouselExample {
     animation-delay: 2.5s; }
-    .nosotros .nosotros-content #carouselExample .carousel-indicators button, .nosotros .nosotros-content #carouselExample .carousel-indicators .contact .contact-form .form-item .contact_button, .contact .contact-form .form-item .nosotros .nosotros-content #carouselExample .carousel-indicators .contact_button {
+    .nosotros .nosotros-content #carouselExample .carousel-indicators button, .nosotros .nosotros-content #carouselExample .carousel-indicators .contact .contact-content .contact-form .form-item .contact_button, .contact .contact-content .contact-form .form-item .nosotros .nosotros-content #carouselExample .carousel-indicators .contact_button {
       background-color: black; }
     .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
       height: 400px;
@@ -338,7 +351,7 @@ footer {
         border-radius: 66px;
         border: solid 2px var(--verde-oscuro);
         background-color: white; }
-    .nosotros .nosotros-content #carouselExample button, .nosotros .nosotros-content #carouselExample .contact .contact-form .form-item .contact_button, .contact .contact-form .form-item .nosotros .nosotros-content #carouselExample .contact_button {
+    .nosotros .nosotros-content #carouselExample button, .nosotros .nosotros-content #carouselExample .contact .contact-content .contact-form .form-item .contact_button, .contact .contact-content .contact-form .form-item .nosotros .nosotros-content #carouselExample .contact_button {
       box-shadow: none; }
 
 @media (max-width: 600px) {

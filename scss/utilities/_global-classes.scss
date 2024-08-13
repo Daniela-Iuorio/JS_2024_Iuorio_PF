@@ -1,3 +1,10 @@
+.display-block{
+    display: block;
+}
+
+.no-display{
+    display: none;
+}
 
 .flex-row{
     display: flex;
@@ -11,6 +18,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.resaltado {
+    font-weight: bold;
 }
 
 // Botones

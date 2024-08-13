@@ -1,82 +1,91 @@
 .contact {
 
-    .contact-form {
-        width: 600px;
-        padding: 10px;
-        animation-delay: 1s;
-        margin: 0 auto;
-        background-color: #ededed;
-
-        label {
-            padding-left: 5px;
-            font-family: $fuente-contenido;
-            font-size: 18px;
+    
+    .contact-content {
+        
+        #mensaje-resumen {
+            width: 80%;
+            margin-top: 10px;
+    
+            .parrafo-mensaje {
+                text-align: justify;
+            }
         }
 
-        .form-item {
-            display: block;
-            margin: 5px;
-            width: 90%;
-            padding: 5px;
-            border: none;
-            border-bottom: 2px solid var(--verde-oscuro);
+        .contact-form {
+            width: 600px;
+            padding: 10px;
+            animation-delay: 1s;
+            margin: 0 auto;
+            background-color: #ededed;
 
-            .contact-form-item {
-                display: inline;
+            label {
+                padding-left: 5px;
+                font-family: $fuente-contenido;
+                font-size: 18px;
             }
 
-            .form-select {
-                width: auto;
+            .form-item {
+                display: block;
+                margin: 5px;
+                width: 90%;
+                padding: 5px;
+                border: none;
+                border-bottom: 2px solid var(--verde-oscuro);
+
+                .contact-form-item {
+                    display: inline;
+                }
+
+                .form-select {
+                    width: auto;
+                }
+
+                .contact_button {
+                    @extend button;
+                    width: 100%;
+                }
+
             }
 
-            .contact_button {
-                @extend button;
-                width: 100%;
+            .sin-borde {
+                border: none;
             }
 
+            .form-p {
+                margin: 10px 5px 10px 0px;
+            }
+
+
+            textarea {
+                height: 200px;
+            }
+
+
         }
 
-        .sin-borde {
-            border: none;
-        }
+        .email-phone-time {
+            display: flex;
+            justify-content: center;
+            animation-delay: 1.5s;
 
-        .form-p {
-            margin: 10px 5px 10px 0px;
-        }
-
-        .resaltado {
-            font-weight: bold;
-        }
-
-
-        textarea {
-            height: 200px;
-        }
-
-
-    }
-
-    .email-phone-time {
-        display: flex;
-        justify-content: center;
-        animation-delay: 1.5s;
-
-        ul {
-            margin: 10px;
-            padding: 0px;
-
-            li {
+            ul {
                 margin: 10px;
                 padding: 0px;
-                list-style-type: none;
+
+                li {
+                    margin: 10px;
+                    padding: 0px;
+                    list-style-type: none;
+                }
             }
         }
-    }
 
-    .horario-atencion {
-        margin: 15px;
-        text-align: center;
-        animation-delay: 2s;
+        .horario-atencion {
+            margin: 15px;
+            text-align: center;
+            animation-delay: 2s;
+        }
     }
 }
 

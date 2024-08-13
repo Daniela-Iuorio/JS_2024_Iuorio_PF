@@ -1,57 +1,75 @@
 let cursoGuardado = JSON.parse(localStorage.getItem("cursoSeleccionado"))
 
-function modificarCursoElegido (cursoGuardado){
+function modificarCursoElegido(cursoGuardado) {
     let pCursoSelect = document.getElementById("form-curso-select")
-    pCursoSelect.innerHTML= `<p class="form-p" id="form-curso-select">Curso seleccionado: <span class="resaltado">${cursoGuardado.nombre}</span></p>`
-}
-
-function modificarCargaHoraria(cursoGuardado){
-    let cargaHoraria = document.getElementById("cantidad-horas")
-    cargaHoraria.innerHTML=`<option class="opcion-horas" value="1" id="1hora">1 hora/semana $${cursoGuardado.precios[0]}</option>
-                            <option class="opcion-horas" value="2" id="2horas">2 horas/semana $${cursoGuardado.precios[1]}</option>
-                            <option class="opcion-horas" value="3" id="3horas">3 horas/semana $${cursoGuardado.precios[2]}</option>`
+    pCursoSelect.innerHTML = `<p class="form-p" id="form-curso-select">Curso seleccionado: <span class="resaltado">${cursoGuardado.nombre}</span> | Valor por hora: $${cursoGuardado.valorHora}</p>`
 }
 
 
-function modificarFormaPago (idInput, value){
-        let inputRadio = document.getElementById(idInput)
-        inputRadio.value = value
+function calcularTotal() {
+    let cargaHoraria = parseInt(document.getElementById('cantidad-horas').value)
+    let formaPago = document.getElementById('forma-pago').value
+    let total = 0
+    switch (formaPago) {
+        case 'semanal':
+            total = (cursoGuardado.valorHora) * cargaHoraria
+            break
+        case 'mensual':
+            total = (((cursoGuardado.valorHora) * cargaHoraria) * 4) * 0.9
+            break
+        case 'trimestral':
+            total = ((((cursoGuardado.valorHora) * cargaHoraria) * 4) * 3) * 0.85
+            break
+        default:
+            total = 0
     }
-
-function calcularTotal (cargaHoraria, formaPago){
-        switch(formaPago){
-            case 'semanal':
-                total = cargaHoraria
-                break
-            case 'mensual':
-                total = (cargaHoraria*4)*0.9
-                break
-            case 'tres-meses':
-                total = ((cargaHoraria*4)*3)*0.85
-                break
-            default:
-                console.log("No se seleccionó una forma de pago.")
-        }
-        return total
+    return total
 }
 
+function mostrarTotal() {
+    let eventPago = document.getElementById('forma-pago')
 
-let radios = document.getElementsByClassName("opcion")
+    eventPago.addEventListener('change', function () {
+        let pTotal = document.getElementById('form-total')
+        pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${calcularTotal()}</span></p>`
+    })
 
-function modificarTotal(){
-    radios.forEach(radio =>{
-        radio.addEventListener('change', function(){
-            let total = document.getElementById('form-total')
-            total.innerHTML=`<p class="form-p" id="form-total">Total a pagar:<span>${calcularTotal()}</span></p>`
-        })
+    let eventHora = document.getElementById('cantidad-horas')
+
+    eventHora.addEventListener('change', function () {
+        let pTotal = document.getElementById('form-total')
+        pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${calcularTotal()}</span></p>`
     })
 }
 
-
 modificarCursoElegido(cursoGuardado)
-modificarCargaHoraria(cursoGuardado)
-modificarFormaPago('1hora', calcularTotal(cantidadHoras, formaPago ))
-modificarTotal()
+mostrarTotal()
+
+function resumir() {
+
+    let botonSumbit = document.getElementById('botonEnviar')
+    botonSumbit.onclick = () => {
+        let nombre = document.getElementById('nombre').value
+        let email = document.getElementById('email').value
+        let horas = document.getElementById('cantidad-horas').value
+        let paquete = document.getElementById('forma-pago').value
+        let mensaje = document.getElementById('mensaje-resumen')
+        mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
+<p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
+Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
+El monto total a abonar es de <span class="resaltado">$${calcularTotal()}</span>. <br><br>
+Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si notas algún error en la dirección de correo electrónico ingresada, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
+¡Te desamos un feliz comienzo de clases!
+</p>`
+        let formulario = document.getElementById('enrole-form')
+        formulario.className = "no-display"
+    }
+}
+
+document.getElementById('enrole-form').addEventListener('submit', function(event) {
+    event.preventDefault()
+    resumir()
+})
 
 
 
