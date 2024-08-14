@@ -33,6 +33,11 @@ function mostrarTotal() {
     eventHora.addEventListener('change', function () {
         let pTotal = document.getElementById('form-total')
         pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${calcularTotal()}</span></p>`
+    
+        let warning2 = document.getElementById('warning2')
+        if (warning2) {
+            warning2.className = 'no-display'
+        }
     })
 
     let eventPago = document.getElementById('forma-pago')
@@ -54,9 +59,6 @@ modificarCursoElegido(cursoGuardado)
 mostrarTotal()
 
 function resumir() {
-
-    let botonSumbit = document.getElementById('botonEnviar')
-    botonSumbit.onclick = () => {
         let campos = document.querySelectorAll('.campo-completo')
         let todosCompletos = true
         campos.forEach(campo => {
@@ -66,7 +68,6 @@ function resumir() {
         })
         if (todosCompletos) {
             let nombre = document.getElementById('nombre').value
-            let apellido = document.getElementById('apellido')
             let email = document.getElementById('email').value
             let horas = document.getElementById('cantidad-horas').value
             let paquete = document.getElementById('forma-pago').value
@@ -86,7 +87,6 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
                 warning.innerHTML = `<p>* Por favor, complete todos los campos.</p>`
             }
         }
-    }
 
 
 document.getElementById('enrole-form').addEventListener('submit', function (event) {
