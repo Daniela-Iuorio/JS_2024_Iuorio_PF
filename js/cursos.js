@@ -46,7 +46,7 @@ function inscribirse() {
             
             localStorage.setItem("cursoSeleccionado", JSON.stringify(selectedCourse))
             
-            window.location.href= "./contacto.html"
+            window.location.href= "./inscripcion.html"
         }
     })
 }

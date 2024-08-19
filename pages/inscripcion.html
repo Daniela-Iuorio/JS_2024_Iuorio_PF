@@ -7,7 +7,7 @@
     <meta name="description"
         content="Contacto de English Connection. Días y horarios, direcciones de correo institucional, números de teléfono, whatsapp. Dejanos tu consulta!">
     <meta name="keywords" content="inglés, contacto, email, teléfono, días y horarios, whatsapp, consulta">
-    <title>Contacto | English Connection</title>
+    <title>Incripción | English Connection</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon-32x32.png">
+    <!-- JavaScript -->
+    <script defer src="../js/inscripcion.js"></script>
 </head>
 
 <body>
@@ -46,7 +48,7 @@
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true" href="./contacto.html">Contacto</a>
+                            <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -59,49 +61,63 @@
         <!-- End of Bootstrap NavBar -->
         <main class="contact">
             <div class="backdrop-h1">
-                <h1>CONTACTO</h1>
+                <h1>INSCRIPCIÓN</h1>
             </div>
-            <form action="#" method="get" class="contact-form animate__animated animate__fadeIn">
-                <label for="text">Nombre y apellido</label>
-                <input class="form-item" type="text" placeholder="Jhon Doe" name="nombre-apellido">
+            <div class="contact-content flex-column">
+            <div id="mensaje-resumen"></div>
+            <!-- FORMULARIO de Inscripción -->
+            <form action="" method="post" class="contact-form" id="enrole-form">
+                <p id="warning"></p>
+
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-item campo-completo" type="text" placeholder="Jhon" name="nombre">
+                
+                <label for="apellido">Apellido</label>
+                <input id="apellido" class="form-item campo-completo" type="text" placeholder="Doe" name="apellido">
+
                 <label for="email"> Dirección de correo electrónico</label>
-                <input class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
+                <input id="email" class="form-item contact_input-email campo-completo" type="email" placeholder="correo@mail.com"
                     name="email-usuario">
-                <label for="tel">Número de teléfono</label>
-                    <input class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
-                <div class="form-item sin-borde">
-                    <label for="curso" class="contact-form-item sin-borde">Curso de interés:</label>
-                    <select class="contact-form-item form-select" name="Curso">
-                        <option value="Elem">Elementary</option>
-                        <option value="Inter">Intermediate</option>
-                        <option value="Adv">Advanced</option>
-                        <option value="Exam">Exam training</option>
+
+                <label for="cel">Número de teléfono</label>
+                <input id="cel" class="form-item campo-completo" type="tel" placeholder="+54 9 11 13212312" name="celular">
+
+                <!--  CURSO Seleccionado -->
+                <p class="form-p" id="form-curso-select">Curso seleccionado: </p>
+
+                <!-- Opciones de CARGA HORARIA -->
+                <label for="cantidad-horas">Carga horaria: </label>
+                <select name="carga-horaria" id="cantidad-horas" class="campo-completo">
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="1">1 hora semanal</option>
+                    <option value="2">2 horas semanales</option>
+                    <option value="3">3 horas semanales</option>
+                </select>
+
+                <!--  FORMAS de PAGO -->
+                <div class="display-block">
+                    <label for="forma-pago">Paquete de clases: </label>
+                    <select name="pago" id="forma-pago" class="campo-completo">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensual">Mensual (-10%)</option>
+                        <option value="trimestral">Trimestral (-15%)</option>
                     </select>
                 </div>
 
-                <textarea name="comentario" placeholder="Contanos cómo podemos ayudarte."
-                    class="form-item comentario"></textarea>
+                <p id="warning2"></p>
+                <!--  TOTAL a pagar -->
+                <p class="form-p" id="form-total">Total a pagar: </p>
+
+                <!-- Botón de ENVIAR -->
                 <div class="form-item sin-borde">
-                    <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email.
-                <input class="contact-form-item contact_button sin-borde" type="submit" value="Enviar">
-            </div>
+                    <input id="botonEnviar" class="contact-form-item contact_button sin-borde btn btn-outline-success"
+                        type="submit" value="Enviar">
+                </div>
             </form>
-            <div class="email-phone-time animate__animated animate__fadeInUp">
-                <ul>
-                    <li><i class="fa-regular fa-envelope"></i> administración@english-connection.edu.ar</li>
-                    <li><i class="fa-regular fa-envelope"></i> docentes@english-connection.edu.ar</li>
-                    <li><i class="fa-regular fa-envelope"></i> comunidad@english-connection.edu.ar</li>
-                </ul>
-                <ul>
-                    <li><i class="fa-solid fa-phone"></i> Teléfono fijo 123123123</li>
-                    <li><i class="fa-solid fa-phone"></i> Teléfono fijo 123123123</li>
-                    <li><i class="fa-brands fa-whatsapp"></i> WhatsApp +54 9 11 123123123</li>
-                </ul>
-            </div>
-            <p class="horario-atencion animate__animated animate__fadeInUp"><i class="fa-regular fa-calendar-days"></i>
-                Horario de atención: Lunes a Viernes de 9 a 18hs</p>
         </main>
     </div>
+</div>
     <footer>
         <p class="footer_text">© 2024 English Connection. All rights reserved.</p>
     </footer>

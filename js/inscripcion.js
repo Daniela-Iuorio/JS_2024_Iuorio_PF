@@ -32,8 +32,9 @@ function mostrarTotal() {
 
     eventHora.addEventListener('change', function () {
         let pTotal = document.getElementById('form-total')
-        pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${calcularTotal()}</span></p>`
-    
+        let total = calcularTotal()
+        pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${total}</span></p>`
+
         let warning2 = document.getElementById('warning2')
         if (warning2) {
             warning2.className = 'no-display'
@@ -44,9 +45,10 @@ function mostrarTotal() {
 
     eventPago.addEventListener('change', function () {
         let hora = document.getElementById('cantidad-horas')
+        let total = calcularTotal()
         if (hora.value) {
             let pTotal = document.getElementById('form-total')
-            pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${calcularTotal()}</span></p>`
+            pTotal.innerHTML = `<p class="form-p" id="form-total">Total a pagar: <span class="resaltado">$${total}</span></p>`
         } else {
             let warning2 = document.getElementById('warning2')
             warning2.className = 'warning'
@@ -59,34 +61,35 @@ modificarCursoElegido(cursoGuardado)
 mostrarTotal()
 
 function resumir() {
-        let campos = document.querySelectorAll('.campo-completo')
-        let todosCompletos = true
-        campos.forEach(campo => {
-            if (campo.value.trim() === '') {
-                todosCompletos = false;
-            }
-        })
-        if (todosCompletos) {
-            let nombre = document.getElementById('nombre').value
-            let email = document.getElementById('email').value
-            let horas = document.getElementById('cantidad-horas').value
-            let paquete = document.getElementById('forma-pago').value
-                let mensaje = document.getElementById('mensaje-resumen')
-                mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
+    let campos = document.querySelectorAll('.campo-completo')
+    let todosCompletos = true
+    campos.forEach(campo => {
+        if (campo.value.trim() === '') {
+            todosCompletos = false;
+        }
+    })
+    if (todosCompletos) {
+        let total = calcularTotal()
+        let nombre = document.getElementById('nombre').value
+        let email = document.getElementById('email').value
+        let horas = document.getElementById('cantidad-horas').value
+        let paquete = document.getElementById('forma-pago').value
+        let mensaje = document.getElementById('mensaje-resumen')
+        mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
 Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
-El monto total a abonar es de <span class="resaltado">$${calcularTotal()}</span>. <br><br>
-Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si notas algún error en la dirección de correo electrónico ingresada, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
+El monto total a abonar es de <span class="resaltado">$${total}</span>. <br><br>
+Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si no recibes el correo, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
 ¡Te desamos un feliz comienzo de clases!
 </p>`
-                let formulario = document.getElementById('enrole-form')
-                formulario.className = "no-display"
-            } else {
-                let warning = document.getElementById('warning')
-                warning.className = 'warning'
-                warning.innerHTML = `<p>* Por favor, complete todos los campos.</p>`
-            }
-        }
+        let formulario = document.getElementById('enrole-form')
+        formulario.className = "no-display"
+    } else {
+        let warning = document.getElementById('warning')
+        warning.className = 'warning'
+        warning.innerHTML = `<p>* Por favor, complete todos los campos.</p>`
+    }
+}
 
 
 document.getElementById('enrole-form').addEventListener('submit', function (event) {
