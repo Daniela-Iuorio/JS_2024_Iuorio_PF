@@ -81,7 +81,8 @@ Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado
 El monto total a abonar es de <span class="resaltado">$${total}</span>. <br><br>
 Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si no recibes el correo, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
 ¡Te desamos un feliz comienzo de clases!
-</p>`
+</p>
+<button class="button btn btn-outline-success" id="boton-continuar">Continuar</button>`
         let formulario = document.getElementById('enrole-form')
         formulario.className = "no-display"
     } else {
