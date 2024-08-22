@@ -3,6 +3,7 @@
 :root {
   --verde-oscuro: #14b856ff;
   --verde-claro: #93EC49ff;
+  --gris-claro: #253a44;
   --fondo-verde: rgba(20, 184, 86, 0.733); }
 
 * {
@@ -22,7 +23,7 @@
   align-items: center;
   flex-wrap: wrap; }
 
-.flex-column, .home .home-content .news-box, .courses .courses_content, .courses .courses_content .courses_card, .comunidad .comunidad-content .mision, .comunidad .comunidad-content .redes, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
+.flex-column, .home-content .home-main .courses_content, .home-content .home-main .courses_content .courses_card, .comunidad .comunidad-content .mision, .comunidad .comunidad-content .redes, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,6 +44,10 @@ button, .contact .contact-form .form-item .contact_button, .contact .contact-con
 a {
   color: black;
   text-decoration: none; }
+
+a:hover {
+  font-weight: bold;
+  font-size: larger; }
 
 .backdrop-h1 {
   height: 150px;
@@ -67,6 +72,13 @@ h2 {
   font-family: "Alegreya", serif;
   text-align: center; }
 
+h3 {
+  color: var(--gris-claro);
+  padding: 5px;
+  margin: 0px 5px 5px 5px;
+  font-family: "Alegreya", serif;
+  text-align: center; }
+
 p, li, input {
   font-family: "Alegreya Sans", sans-serif;
   font-size: large;
@@ -76,25 +88,14 @@ p, li, input {
   h2 {
     text-align: center; } }
 
-a:hover {
-  font-weight: bold;
-  font-size: larger; }
-
-.navbar-brand {
-  background-color: var(--fondo-verde);
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 5px;
-  font-family: "Alegreya", serif;
-  font-weight: bold;
-  text-transform: uppercase; }
-  .navbar-brand img {
-    padding: 0px 5px; }
-
-a.nav-link {
-  font-family: "Alegreya Sans", sans-serif;
-  font-weight: bold;
-  font-size: large; }
+.navbar {
+  padding: 0px; }
+  .navbar .navbar-brand .navbar-logo {
+    width: 60px; }
+  .navbar a.nav-link {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: bold;
+    font-size: large; }
 
 footer {
   background-color: var(--fondo-verde);
@@ -111,55 +112,16 @@ footer {
     padding: 5px;
     font-size: small; } }
 
-.home .home-content {
-  width: 700px;
-  margin: 0 auto; }
-  .home .home-content .welcome-box {
-    animation-delay: 1s; }
-    .home .home-content .welcome-box h2 {
-      text-align: center; }
-    .home .home-content .welcome-box p {
-      text-align: justify;
-      padding: 5px;
-      margin: 10px; }
-  .home .home-content .news-box {
-    padding: 5px;
-    text-align: justify;
-    margin: 10px;
-    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
-    background-color: #ffffff;
-    border-radius: 5px;
-    animation-delay: 1.5s; }
-    .home .home-content .news-box img {
-      width: 75%; }
-    .home .home-content .news-box .rueda {
-      width: 50%; }
-    .home .home-content .news-box p {
-      padding: 20px;
-      font-size: larger; }
-    .home .home-content .news-box a {
-      color: blue;
-      text-decoration: underline;
-      padding: 0px 5px; }
-
-@media (max-width: 700px) {
-  .home .home-content {
-    width: auto; }
-    .home .home-content .welcome-box p {
-      margin: 20px; } }
-
-.courses .courses_content {
-  width: 600px;
-  margin: 0 auto; }
-  .courses .courses_content .courses_card {
-    margin: 10px 30px;
-    width: auto; }
-    .courses .courses_content .courses_card p {
-      text-align: justify; }
-
-@media (max-width: 600px) {
-  .courses .courses_content {
-    width: auto; } }
+.home-content .home-main {
+  width: 80%; }
+  .home-content .home-main .courses_content {
+    width: 600px;
+    margin: 0 auto; }
+    .home-content .home-main .courses_content .courses_card {
+      margin: 10px 30px;
+      width: auto; }
+      .home-content .home-main .courses_content .courses_card p {
+        text-align: justify; }
 
 .resources .resources-content {
   width: 700px;

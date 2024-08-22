@@ -1,22 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Cursos de inglés para adolescentes y adultos. Preparación de exámenes internacionales. Clases presenciales y virtuales. Recursos multimedia.">
-    <meta name="keywords" content="inglés, cursos, adultos, exámenes, virtual, online">
+        content="Cursos de inglés para adolescentes y adultos. Preparación de exámenes internacionales. Clases presenciales y virtuales. Recursos multimedia." />
+    <meta name="keywords" content="inglés, cursos, adultos, exámenes, virtual, online" />
     <title>Inicio | English Connection</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Mi CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/EC favicon.png" />
+    <!-- JavaScript -->
+    <script defer src="./js/index.js"></script>
 </head>
 
 <body>
@@ -24,8 +26,9 @@
         <!-- Bootstrap NavBar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><img src="./resources/favicon-32x32.png" alt="logo"
-                        class="navbar-logo">English Connection</a>
+                <a class="navbar-brand" href="./index.html"><img src="./resources/EC transparent background.png"
+                        alt="logo" class="navbar-logo" /></a>
+                <a class="boton-autogestion btn btn-success" href="./pages/autogestion.html">Mi Aula</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -33,86 +36,38 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/cursos.html">Cursos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./pages/recursos.html">Recursos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
+                            <a class="nav-link" href="#">Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">
+                            Buscar
+                        </button>
                     </form>
                 </div>
             </div>
         </nav>
         <!-- End of Bootstrap NavBar -->
-        <main class="home">
+        <main class="home-content flex-column">
             <div class="backdrop-h1">
                 <h1>ENGLISH CONNECTION</h1>
             </div>
-            <div class="home-content" id="explicacion">
-                <h2>Recorrido JS</h2>
-                <p>1- Ingresar a sección "Cursos" <br>2-Elegir el curso en el que quiere inscribirse <br>3- Lo redirige a un formulario de inscripción que debe completar y enviar <br>4- Se devuelve un mensaje con todos los datos ingresados confirmando la inscripción</p>
+            <div class="home-main flex-column">
+                <h2>Welcome! | ¡Bienvenid@s!</h2>
+                <p class="p-bienvenida">
+                    Leé la descripción de los cursos, elegí el que mejor se adapte a lo
+                    que buscás e inscribite online. Luego, en la seción "Mi Aula" gestioná
+                    los días y horarios de cursada, adquirí el material necesario y accedé
+                    a recursos exclusivos de English Connection.
+                </p>
+
+                <div id="divCursos" class="courses_content"></div>
             </div>
-            <!-- <div  id="contenido-original" class="home-content">
-                Welcome Box
-                <div class="welcome-box invertida animate__animated animate__fadeInUp">
-                    <h2>Welcome!</h2>
-                    <p class="box-text">¡Bienvenido a English Connection! Sumérgete en el mundo del inglés con nosotros.
-                        En nuestro sitio web, encontrarás una amplia gama de recursos diseñados para potenciar tu
-                        dominio del idioma. Desde material didáctico hasta ejercicios interactivos, estamos aquí para
-                        apoyarte en cada paso del camino. Descubre nuestros cursos especializados, con un equipo de
-                        profesionales dedicados a tu aprendizaje. Además, conoce más sobre nuestro equipo experto y
-                        encuentra el medio de contacto ideal para cualquier consulta. ¡Únete a nosotros y lleva tu
-                        inglés al siguiente nivel!</p>
-                </div>
-
-                Noticia 1
-                <div class="news-box animate__animated animate__fadeInUp">
-                    <h2 class="news-title">Conectados en equipo</h2>
-                    <img class="index-photo" src="./resources/photos/noticia-1-foto.webp"
-                        alt="tres personas de diferentes géneros y origen estudian juntos con computadoras">
-                    <p class="box-text">English Connection impulsa el trabajo colaborativo a través de grupos de estudio
-                        remotos asincrónicos. Coordinados por nuestro instituto, estos grupos ofrecen flexibilidad
-                        horaria y acceso a recursos compartidos para maximizar el aprendizaje. Nuestro enfoque promueve
-                        la interacción entre estudiantes, fomentando el intercambio de ideas y el crecimiento
-                        académico.<a href="#">Ver más</a></p>
-                </div>
-
-                Noticia 2
-                <div class="news-box invertida animate__animated animate__fadeInUp">
-                    <h2 class="news-title">Clases online para adultos</h2>
-                    <img class="index-photo" src="./resources/photos/noticia-2-foto.webp"
-                        alt="muchacho con auriculares mira una computadora">
-                    <p class="box-text">¡Anunciamos el lanzamiento de nuestro nuevo programa de clases individuales
-                        personalizadas en línea para adultos! Diseñado para adaptarse a tus necesidades específicas y
-                        horarios ocupados, estas clases ofrecen una experiencia de aprendizaje flexible y centrada en
-                        ti. ¡Embárcate en un viaje hacia la fluidez con la guía experta de nuestros instructores de
-                        English Connection!<a href="#">Ver más</a></p>
-                </div>
-
-                Noticia 3
-                <div class="news-box animate__animated animate__fadeInUp">
-                    <h2 class="news-title">Hacia la Agenda 2030</h2>
-                    <img class="index-photo rueda" src="./resources/photos/noticia-3-foto.webp"
-                        alt="rueda de objetivos de desarrollo sustentable con leyenda de ODS4 educación de calidad">
-                    <p class="box-text">English Connection avanza hacia la realización del Objetivo de Desarrollo
-                        Sostenible número 4: Educación de Calidad, de la Agenda 2030. Mediante programas innovadores y
-                        una enseñanza inclusiva, nos comprometemos a proporcionar una educación que empodere a nuestros
-                        estudiantes para alcanzar su máximo potencial. Desde la mejora continua de nuestros métodos de
-                        enseñanza hasta el fomento de la diversidad lingüística, estamos dedicados a promover una
-                        educación de calidad para todos. <a href="#">Ver más</a></p>
-                </div>
-            </div> -->
         </main>
     </div>
     <footer>

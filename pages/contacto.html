@@ -18,7 +18,7 @@
     <!-- Mi CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../resources/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/EC favicon.png">
 </head>
 
 <body>
@@ -26,8 +26,9 @@
         <!-- Bootstrap NavBar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html"><img src="../resources/favicon-32x32.png" alt="logo"
-                        class="navbar-logo">English Connection</a>
+                <a class="navbar-brand" href="../index.html"><img src="../resources/EC transparent background.png"
+                        alt="logo" class="navbar-logo" /></a>
+                <a class="boton-autogestion btn btn-success" href="./autogestion.html">Mi Aula</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -35,23 +36,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                         <li class="nav-item">
-                            <a class="nav-link" href="./cursos.html">Cursos</a>
+                            <a class="nav-link" href="#">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./recursos.html">Recursos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true" href="./contacto.html">Contacto</a>
+                            <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">
+                            Buscar
+                        </button>
                     </form>
                 </div>
             </div>
@@ -68,7 +64,7 @@
                 <input class="form-item contact_input-email" type="email" placeholder="correo@mail.com"
                     name="email-usuario">
                 <label for="tel">Número de teléfono</label>
-                    <input class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
+                <input class="form-item" type="tel" placeholder="+54 9 11 13212312" name="celular">
                 <div class="form-item sin-borde">
                     <label for="curso" class="contact-form-item sin-borde">Curso de interés:</label>
                     <select class="contact-form-item form-select" name="Curso">
@@ -82,9 +78,10 @@
                 <textarea name="comentario" placeholder="Contanos cómo podemos ayudarte."
                     class="form-item comentario"></textarea>
                 <div class="form-item sin-borde">
-                    <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones por email.
-                <input class="contact-form-item contact_button sin-borde" type="submit" value="Enviar">
-            </div>
+                    <input class="contact-form-item" type="checkbox" name="suscripcion"> Recibir novedades y promociones
+                    por email.
+                    <input class="contact-form-item contact_button sin-borde" type="submit" value="Enviar">
+                </div>
             </form>
             <div class="email-phone-time animate__animated animate__fadeInUp">
                 <ul>

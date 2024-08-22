@@ -1,18 +1,16 @@
-.navbar-brand {
-    img{
-        padding: 0px 5px;
+.navbar{
+    padding: 0px;
+    .navbar-brand {
+        .navbar-logo{
+            width: 60px;
+            
+        }
     }
-    background-color: var(--fondo-verde);
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 5px;
-    font-family: $fuente-titulos;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+    
+    a.nav-link{
+        font-family: $fuente-contenido;
+        font-weight: bold;
+        font-size: large;
+    }
 
-a.nav-link{
-    font-family: $fuente-contenido;
-    font-weight: bold;
-    font-size: large;
 }

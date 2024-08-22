@@ -25,7 +25,7 @@ function renderCursos(coursesArray) {
     coursesArray.forEach(curso => {
         const card = document.createElement("div")
         card.className = "courses_card"
-        card.innerHTML = `<h2>${curso.nombre}</h2>
+        card.innerHTML = `<h3>${curso.nombre}</h3>
                         <p>${curso.descripcion}</p>
                         <button class="inscribirse btn btn-outline-success" id="${curso.id}">Inscribirse</button>`
         divCursos.appendChild(card)
@@ -46,7 +46,7 @@ function inscribirse() {
             
             localStorage.setItem("cursoSeleccionado", JSON.stringify(selectedCourse))
             
-            window.location.href= "./inscripcion.html"
+            window.location.href= "./pages/inscripcion.html"
         }
     })
 }
