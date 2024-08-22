@@ -3,11 +3,23 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    padding: 10px;
 
     .footer_text {
         color: black;
         padding: 10px;
-        margin: 0;
+        margin: 10px;
+        display: inline;
+    }
+
+    .redes-footer{
+        display: inline;
+        padding: 10px;
+        margin: 10px;
+        .redes_social-link{
+            margin: 5px;
+            width: 10px;
+        }
     }
 }
 

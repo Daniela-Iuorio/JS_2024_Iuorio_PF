@@ -85,6 +85,8 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
 <button class="button btn btn-outline-success" id="boton-continuar">Continuar</button>`
         let formulario = document.getElementById('enrole-form')
         formulario.className = "no-display"
+
+        // setTimeout(()=>{window.location.href= "./autogestion.html"}, 10000)
     } else {
         let warning = document.getElementById('warning')
         warning.className = 'warning'

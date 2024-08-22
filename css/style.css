@@ -17,13 +17,13 @@
 .no-display {
   display: none; }
 
-.flex-row, .comunidad .comunidad-content .redes .redes_social {
+.flex-row {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
 
-.flex-column, .home-content .home-main .courses_content, .home-content .home-main .courses_content .courses_card, .comunidad .comunidad-content .mision, .comunidad .comunidad-content .redes, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
+.flex-column, .home-content .home-main .courses_content, .home-content .home-main .courses_content .courses_card, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,11 +101,20 @@ footer {
   background-color: var(--fondo-verde);
   bottom: 0;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  padding: 10px; }
   footer .footer_text {
     color: black;
     padding: 10px;
-    margin: 0; }
+    margin: 10px;
+    display: inline; }
+  footer .redes-footer {
+    display: inline;
+    padding: 10px;
+    margin: 10px; }
+    footer .redes-footer .redes_social-link {
+      margin: 5px;
+      width: 10px; }
 
 @media (max-width: 360px) {
   footer .footer_text {
@@ -162,45 +171,6 @@ footer {
 
 @media (max-width: 550px) {
   .resources .resources-content {
-    width: auto; } }
-
-.comunidad .comunidad-content {
-  width: 600px;
-  margin: 0 auto; }
-  .comunidad .comunidad-content h2 {
-    animation-delay: 1s;
-    text-align: center; }
-  .comunidad .comunidad-content .mision {
-    padding: 10px;
-    animation-delay: 1.5s; }
-    .comunidad .comunidad-content .mision p {
-      text-align: justify;
-      padding: 5px;
-      margin: 5px; }
-    .comunidad .comunidad-content .mision img {
-      width: 70%; }
-  .comunidad .comunidad-content .h2-redes {
-    animation-delay: 2s; }
-  .comunidad .comunidad-content .redes .redes_social {
-    background-color: rgba(0, 0, 0, 0.233);
-    width: 70%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-    justify-content: space-evenly;
-    animation-delay: 2.5s; }
-    .comunidad .comunidad-content .redes .redes_social .redes_social-link {
-      color: rgba(0, 0, 0, 0.767);
-      font-size: 30px; }
-  .comunidad .comunidad-content .redes .reddit {
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
-    overflow: hidden;
-    margin: 20px;
-    animation-delay: 2.5s; }
-
-@media (max-width: 600px) {
-  .comunidad .comunidad-content {
     width: auto; } }
 
 .contact .contact-form {
@@ -263,17 +233,14 @@ footer {
 .nosotros .nosotros-content {
   width: 600px;
   margin: 0 auto; }
-  .nosotros .nosotros-content h2 {
-    animation-delay: 1s; }
   .nosotros .nosotros-content .historia p {
     text-align: justify;
     padding: 5px;
-    margin: 5px;
-    animation-delay: 1.5s; }
+    margin: 5px; }
   .nosotros .nosotros-content .h2-staff {
-    animation-delay: 2s; }
+    animation-delay: 1s; }
   .nosotros .nosotros-content #carouselExample {
-    animation-delay: 2.5s; }
+    animation-delay: 1.5s; }
     .nosotros .nosotros-content #carouselExample .carousel-indicators button, .nosotros .nosotros-content #carouselExample .carousel-indicators .contact .contact-form .form-item .contact_button, .contact .contact-form .form-item .nosotros .nosotros-content #carouselExample .carousel-indicators .contact_button {
       background-color: black; }
     .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
