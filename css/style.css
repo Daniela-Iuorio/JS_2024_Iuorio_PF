@@ -366,3 +366,53 @@ footer {
   .contact .contact-form .contact_button {
     position: sticky;
     left: 95%; } }
+
+.contenedor-autogestion {
+  display: grid;
+  grid-template-areas: "user course course" "user payment payment"; }
+  .contenedor-autogestion .div-usuario {
+    grid-area: user;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px var(--verde-oscuro); }
+    .contenedor-autogestion .div-usuario .avatar {
+      width: 130px;
+      border-radius: 64px; }
+    .contenedor-autogestion .div-usuario h3 {
+      text-align: left;
+      padding-left: 0px;
+      margin-left: 0px; }
+    .contenedor-autogestion .div-usuario .sub-div-usuario {
+      align-items: flex-start; }
+  .contenedor-autogestion .div-cursada {
+    grid-area: course;
+    margin: 10px;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px var(--verde-oscuro); }
+    .contenedor-autogestion .div-cursada h3 {
+      text-align: left;
+      padding-left: 0px;
+      margin-left: 0px; }
+    .contenedor-autogestion .div-cursada p {
+      padding-right: 10px; }
+  .contenedor-autogestion .div-facturacion {
+    grid-area: payment;
+    margin: 10px;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px var(--verde-oscuro); }
+    .contenedor-autogestion .div-facturacion h3 {
+      text-align: left;
+      padding-left: 0px;
+      margin-left: 0px; }
+    .contenedor-autogestion .div-facturacion p {
+      padding-right: 10px; }

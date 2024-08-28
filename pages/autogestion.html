@@ -54,7 +54,39 @@
         </div>
     </nav>
     <!-- End of Bootstrap NavBar -->
-
+<main class="main-autogestion contenedor-autogestion">
+    <!-- Perfil de Usuario -->
+<div id="user-div" class="div-usuario">
+    <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
+    <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button>
+    <h3 id="user-welcome">Welcome, UserName!</h3>
+    <div id="user-div-form" class="sub-div-usuario flex-column">
+    <p>Nombre de Usuario: JohnDoe45</p>
+    <p>Nombre completo: John Harris Doe</p>
+    <p>E-mail: john-doe@gmail.com</p>
+    <p>Phone number: +54 9 11 134 5678</p>
+    <button class="btn-modif-datos" id="modificar-datos-personales"><span class="fa-solid fa-pencil"></span></button>
+    </div>
+</div>
+<!-- Datos de Curso -->
+<div id="course-info-div" class="div-cursada flex-column">
+    <h3 id="nombre-curso">Nombre de Curso</h3>
+    <div class="flex-row">
+    <p class="horario-cursada" id="schedule-curso">Días y horario de cursada</p>
+    <button class="btn-modif-curso" id="modificar-curso"><span class="fa-solid fa-pencil"></span></button>
+</div>
+    <p id="profe-curso">Profesor/a</p>
+</div>
+<!-- Datos de Facturación -->
+<div class="div-facturacion flex-column">
+    <h3>Facturación</h3>
+    <div class="flex-row">
+    <p id="info-modalidad-pago">Modalidad: semanal, mensual, trimestral</p>
+    <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
+</div>
+    <p id="info-total-pagar">Valor: $0.000,00</p>
+</div>
+</main>
     <!-- Footer -->
     <footer>
         <p class="footer_text">© 2024 English Connection. All rights reserved.</p>
