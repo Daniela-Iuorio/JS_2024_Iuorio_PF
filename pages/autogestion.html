@@ -11,7 +11,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <!-- Iconos de Font Awesome -->
+    <!-- Iconos de Font Awesome -->
     <script src="https://kit.fontawesome.com/fda70a6fab.js" crossorigin="anonymous"></script>
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -54,50 +54,60 @@
         </div>
     </nav>
     <!-- End of Bootstrap NavBar -->
-<main class="main-autogestion contenedor-autogestion">
-    <!-- Perfil de Usuario -->
-<div id="user-div" class="div-usuario">
-    <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
-    <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button>
-    <h3 id="user-welcome">Welcome, UserName!</h3>
-    <div id="user-div-form" class="sub-div-usuario flex-column">
-    <p>Nombre de Usuario: JohnDoe45</p>
-    <p>Nombre completo: John Harris Doe</p>
-    <p>E-mail: john-doe@gmail.com</p>
-    <p>Phone number: +54 9 11 134 5678</p>
-    <button class="btn-modif-datos" id="modificar-datos-personales"><span class="fa-solid fa-pencil"></span></button>
-    </div>
-</div>
-<!-- Datos de Curso -->
-<div id="course-info-div" class="div-cursada flex-column">
-    <h3 id="nombre-curso">Nombre de Curso</h3>
-    <div class="flex-row">
-    <p class="horario-cursada" id="schedule-curso">Días y horario de cursada</p>
-    <button class="btn-modif-curso" id="modificar-curso"><span class="fa-solid fa-pencil"></span></button>
-</div>
-    <p id="profe-curso">Profesor/a</p>
-</div>
-<!-- Datos de Facturación -->
-<div class="div-facturacion flex-column">
-    <h3>Facturación</h3>
-    <div class="flex-row">
-    <p id="info-modalidad-pago">Modalidad: semanal, mensual, trimestral</p>
-    <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
-</div>
-    <p id="info-total-pagar">Valor: $0.000,00</p>
-</div>
-</main>
+    <main class="main-autogestion contenedor-autogestion">
+        <!-- Perfil de Usuario -->
+        <div id="user-div" class="div-usuario">
+            <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
+            <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button>
+            <h3>Welcome, <span class="span-strong" id="user-welcome">UserName</span>!</h3>
+            <div id="user-div-text" class="sub-div-usuario flex-column">
+                <p>Nombre de Usuario: <span class="span-strong" id="user-name">NuevoUsuario</span></p>
+                <p>Nombre completo: <span class="span-strong" id="nombre-apellido">John Harris Doe</span></p>
+                <p>E-mail: <span class="span-strong" id="email">john-doe@gmail.com</span></p>
+                <p>Phone number: <span class="span-strong" id="celu">+54 9 11 134 5678</span></p>
+                <button class="btn-modif-datos" id="modificar-datos-personales"><span
+                        class="fa-solid fa-pencil"></span></button>
+            </div>
+        </div>
+        <!-- Datos de Curso -->
+        <div id="course-info-div" class="div-cursada flex-column">
+            <h3>Cursando</h3>
+            <p>Curso: <span class="span-strong" id="nombre-curso">Nombre de Curso</span></p>
+            <form action="" method="post">
+                <div class="flex-row">
+                    <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
+                    <button class="btn-modif-curso" id="modificar-curso"><span
+                            class="fa-solid fa-pencil"></span></button>
+                </div>
+            </form>
+
+            <p id="profe-curso">Profesor/a</p>
+        </div>
+        <!-- Datos de Facturación -->
+        <div class="div-facturacion flex-column">
+            <h3>Facturación</h3>
+            <div class="flex-row">
+                <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria">1, 2 o 3 horas</span></p>
+                <button id="modificar-horas"><span class="fa-solid fa-pencil"></span></button>
+            </div>
+            <div class="flex-row">
+                <p>Modalidad de pago: <span class="span-strong" id="info-modalidad-pago">semanal, mensual, trimestral</span></p>
+                <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
+            </div>
+            <p>Valor: <span class="span-strong" id="info-total-pagar">0.000,00</span></p>
+        </div>
+    </main>
     <!-- Footer -->
     <footer>
         <p class="footer_text">© 2024 English Connection. All rights reserved.</p>
         <div class="redes-footer">
             <a class="redes_social-link" href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a class="redes_social-link" href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a class="redes_social-link" href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a class="redes_social-link" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a class="redes_social-link" href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a class="redes_social-link" href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
+            <a class="redes_social-link" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="redes_social-link" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="redes_social-link" href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="redes_social-link" href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="redes_social-link" href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
     </footer>
 
 

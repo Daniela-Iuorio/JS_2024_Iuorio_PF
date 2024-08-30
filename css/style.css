@@ -370,6 +370,8 @@ footer {
 .contenedor-autogestion {
   display: grid;
   grid-template-areas: "user course course" "user payment payment"; }
+  .contenedor-autogestion .span-strong {
+    font-weight: bold; }
   .contenedor-autogestion .div-usuario {
     grid-area: user;
     margin: 10px;

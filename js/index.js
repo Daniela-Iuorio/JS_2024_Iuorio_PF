@@ -1,26 +1,16 @@
-class Curso {
-    static id = 0
-    constructor(nombre, descripcion, valorHora) {
-        this.id = ++Curso.id
-        this.nombre = nombre
-        this.descripcion = descripcion
-        this.valorHora = valorHora
-    }
-}
+let arrayCursos
 
-const elem = new Curso("Elementary", "Diseñado para principiantes que desean establecer una base sólida en el idioma. Al finalizar el curso, los estudiantes tendrán habilidades para comunicarse en situaciones cotidianas, comprender textos simples y expresar ideas básicas.", 7000)
+// Traigo info de cursos desde database local
+fetch("./db/data.json")
+.then(response=>response.json())
+.then(data=>{
+    arrayCursos = data
+    renderCursos(data)
+    console.log(data)
+})
 
-const inter = new Curso("Intermediate", "Dirigido a estudiantes que ya tienen un conocimiento básico del idioma y desean mejorar sus habilidades. Al completar el curso, los estudiantes podrán comunicarse con mayor confianza en una variedad de contextos, comprender textos más complejos y expresar ideas con mayor claridad.", 8000)
-
-const adv = new Curso("Advanced", "Diseñado para estudiantes con un dominio sólido del idioma que buscan perfeccionar sus habilidades. Al finalizar el curso, los estudiantes serán capaces de comunicarse con fluidez y precisión en situaciones complejas, comprender textos y discursos sofisticados, y expresar ideas con claridad y coherencia.", 9000)
-
-const exam = new Curso("Exam Training", "Nos enfocamos en mejorar habilidades específicas requeridas para exámenes internacionales, como comprensión auditiva, expresión escrita, gramática avanzada y estrategias de examen. Utilizamos material auténtico de exámenes anteriores, simulacros de prueba y tutorías personalizadas.", 10000)
-
-const cursos = [elem, inter, adv, exam]
-
-
+// Creo cards para mostrar en página inicio
 let divCursos = document.getElementById("divCursos")
-
 function renderCursos(coursesArray) {
     coursesArray.forEach(curso => {
         const card = document.createElement("div")
@@ -33,16 +23,15 @@ function renderCursos(coursesArray) {
     inscribirse()
 }
 
-renderCursos(cursos)
 
+// Guardo el curso elegido y redirecciono a formulario de inscripción
 let selectedCourse
-
 function inscribirse() {
     let enroleButton = document.querySelectorAll(".inscribirse")
     enroleButton.forEach (button => {
         button.onclick = (e) => {
             const courseId = e.currentTarget.id
-            selectedCourse = cursos.find(curso => curso.id == courseId)
+            selectedCourse = arrayCursos.find(curso => curso.id == courseId)
             
             localStorage.setItem("cursoSeleccionado", JSON.stringify(selectedCourse))
             

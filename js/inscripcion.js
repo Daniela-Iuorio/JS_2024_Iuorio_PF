@@ -1,24 +1,26 @@
+//Recupero datos de curso elegido
 let cursoGuardado = JSON.parse(localStorage.getItem("cursoSeleccionado"))
 
+// Autocompletado de datos de curso en formulario
 function modificarCursoElegido(cursoGuardado) {
     let pCursoSelect = document.getElementById("form-curso-select")
-    pCursoSelect.innerHTML = `<p class="form-p" id="form-curso-select">Curso seleccionado: <span class="resaltado">${cursoGuardado.nombre}</span> | Valor por hora: $${cursoGuardado.valorHora}</p>`
+    pCursoSelect.innerHTML = `<p class="form-p" id="form-curso-select">Curso seleccionado: <span class="resaltado">${cursoGuardado.nombre}</span> | Valor por hora: $${cursoGuardado.precio}</p>`
 }
 
-
+//Calculo total según carga horaria y modalidad de pago
 function calcularTotal() {
     let cargaHoraria = parseInt(document.getElementById('cantidad-horas').value)
     let formaPago = document.getElementById('forma-pago').value
     let total = 0
     switch (formaPago) {
         case 'semanal':
-            total = (cursoGuardado.valorHora) * cargaHoraria
+            total = (cursoGuardado.precio) * cargaHoraria
             break
         case 'mensual':
-            total = (((cursoGuardado.valorHora) * cargaHoraria) * 4) * 0.9
+            total = (((cursoGuardado.precio) * cargaHoraria) * 4) * 0.9
             break
         case 'trimestral':
-            total = ((((cursoGuardado.valorHora) * cargaHoraria) * 4) * 3) * 0.85
+            total = ((((cursoGuardado.precio) * cargaHoraria) * 4) * 3) * 0.85
             break
         default:
             total = 0
@@ -26,6 +28,7 @@ function calcularTotal() {
     return total
 }
 
+//Muestro total según carga horaria y modalidad de pago elegida
 function mostrarTotal() {
 
     let eventHora = document.getElementById('cantidad-horas')
@@ -60,6 +63,20 @@ function mostrarTotal() {
 modificarCursoElegido(cursoGuardado)
 mostrarTotal()
 
+// Creo constructor para guardar datos de usuario en un objeto
+class Usuario {
+    constructor (nombre, apellido, email, celular, horas, paquete, total){
+        this.nombre=nombre
+        this.apellido=apellido
+        this.email=email
+        this.celular=celular
+        this.horas=horas
+        this.paquete=paquete
+        this.total=total
+    }
+}
+
+// Guardo valores de inputs, creo el objeto 'usuario', y muestro texto informativo con detalles de inscripción
 function resumir() {
     let campos = document.querySelectorAll('.campo-completo')
     let todosCompletos = true
@@ -71,10 +88,17 @@ function resumir() {
     if (todosCompletos) {
         let total = calcularTotal()
         let nombre = document.getElementById('nombre').value
+        let apellido = document.getElementById('apellido').value
         let email = document.getElementById('email').value
+        let celular = document.getElementById('cel').value
         let horas = document.getElementById('cantidad-horas').value
         let paquete = document.getElementById('forma-pago').value
         let mensaje = document.getElementById('mensaje-resumen')
+
+        const usuario = new Usuario (nombre, apellido, email, celular, horas, paquete, total)
+
+        localStorage.setItem("usuario", JSON.stringify(usuario))       
+
         mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
 Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
@@ -86,7 +110,25 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
         let formulario = document.getElementById('enrole-form')
         formulario.className = "no-display"
 
-        // setTimeout(()=>{window.location.href= "./autogestion.html"}, 10000)
+        //SweetAlert con cuenta regresiva para avisar el redireccionamiento
+        let timer = 10;
+        Swal.fire({
+            position: 'top-end',
+            title: 'Redireccionando...',
+            html: `Serás redirigido en <b>${timer}</b> segundos.`,
+            timer: timer * 1000,
+            didOpen: () => {
+                const b = Swal.getHtmlContainer().querySelector('b');
+                const interval = setInterval(() => {
+                    timer--;
+                    b.textContent = timer;
+                }, 1000);
+            },
+            willClose: () => {
+                window.location.href = "./autogestion.html";
+            }
+        })
+
     } else {
         let warning = document.getElementById('warning')
         warning.className = 'warning'
