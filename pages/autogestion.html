@@ -73,25 +73,20 @@
         <div id="course-info-div" class="div-cursada flex-column">
             <h3>Cursando</h3>
             <p>Curso: <span class="span-strong" id="nombre-curso">Nombre de Curso</span></p>
-            <form action="" method="post">
-                <div class="flex-row">
-                    <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
-                    <button class="btn-modif-curso" id="modificar-curso"><span
-                            class="fa-solid fa-pencil"></span></button>
-                </div>
-            </form>
-
-            <p id="profe-curso">Profesor/a</p>
+            <div id="horario" class="flex-row">
+                <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
+                <button class="btn-modif-curso" id="modificar-curso"><span class="fa-solid fa-pencil"></span></button>
+            </div>
+            <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria">1, 2 o 3 horas</span>
+            </p>
+            <p>Profesor/a: <span class="span-strong" id="profe-curso"></span></p>
         </div>
         <!-- Datos de Facturación -->
         <div class="div-facturacion flex-column">
             <h3>Facturación</h3>
-            <div class="flex-row">
-                <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria">1, 2 o 3 horas</span></p>
-                <button id="modificar-horas"><span class="fa-solid fa-pencil"></span></button>
-            </div>
-            <div class="flex-row">
-                <p>Modalidad de pago: <span class="span-strong" id="info-modalidad-pago">semanal, mensual, trimestral</span></p>
+            <div id="pago" class="flex-row">
+                <p>Modalidad de pago: <span class="span-strong" id="info-modalidad-pago">semanal, mensual,
+                        trimestral</span></p>
                 <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
             </div>
             <p>Valor: <span class="span-strong" id="info-total-pagar">0.000,00</span></p>
