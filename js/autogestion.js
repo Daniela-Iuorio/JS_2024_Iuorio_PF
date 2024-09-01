@@ -2,10 +2,6 @@
 let cursoElegido = JSON.parse(localStorage.getItem("cursoSeleccionado"))
 let usuarioGestion = JSON.parse(localStorage.getItem("usuario"))
 
-// Me aseguro de que el usuario del mensaje de bienvenida coincide con nombre de usuario elegido
-let usuarioWelcome = document.getElementById("user-welcome")
-let nombreUsuario = document.getElementById("user-name").innerText
-usuarioWelcome.innerText = nombreUsuario
 
 // Función para mostrar toda la info ingresada en la inscripción
 function completarDatosIniciales() {

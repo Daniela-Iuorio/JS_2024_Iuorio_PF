@@ -13,6 +13,10 @@
     flex-wrap: wrap;
 }
 
+.left{
+    justify-content: flex-start;
+}
+
 .flex-column{
     display: flex;
     flex-direction: column;

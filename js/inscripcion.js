@@ -1,11 +1,52 @@
 //Recupero datos de curso elegido
 let cursoGuardado = JSON.parse(localStorage.getItem("cursoSeleccionado"))
-
 // Autocompletado de datos de curso en formulario
-function modificarCursoElegido(cursoGuardado) {
+function completarDatosCurso() {
     let pCursoSelect = document.getElementById("form-curso-select")
     pCursoSelect.innerHTML = `<p class="form-p" id="form-curso-select">Curso seleccionado: <span class="resaltado">${cursoGuardado.nombre}</span> | Valor por hora: $${cursoGuardado.precio}</p>`
+
 }
+
+//Cambio opciones de cursada según carga horaria
+function modificarHorario() {
+    let cantidadHoras = document.getElementById('cantidad-horas')
+    let opcion1 = document.getElementById('op1')
+    let opcion2 = document.getElementById('op2')
+
+    // Muestro advertencia si no se ha seleccionado la carga horaria
+    function mostrarAdvertencia() {
+        opcion1.innerText = "Elija primero la carga horaria"
+        opcion2.innerText = "Elija primero la carga horaria"
+    }
+
+    // Actualizo opciones de horario según la carga horaria 
+    function actualizarOpciones() {
+        let cargaHoraria = cantidadHoras.value
+        switch (cargaHoraria) {
+            case "1":
+                opcion1.innerText = cursoGuardado.h1op1
+                opcion2.innerText = cursoGuardado.h1op2
+                break;
+            case "2":
+                opcion1.innerText = cursoGuardado.h2op1
+                opcion2.innerText = cursoGuardado.h2op2
+                break;
+            case "3":
+                opcion1.innerText = cursoGuardado.h3op1
+                opcion2.innerText = cursoGuardado.h3op2
+                break;
+            default:
+                mostrarAdvertencia()
+        }
+    }
+
+    // Llamo a mostrarAdvertencia al cargar la página
+    mostrarAdvertencia()
+
+    // Asigno evento para cambiar opciones
+    cantidadHoras.addEventListener('change', actualizarOpciones)
+}
+
 
 //Calculo total según carga horaria y modalidad de pago
 function calcularTotal() {
@@ -60,19 +101,20 @@ function mostrarTotal() {
     })
 }
 
-modificarCursoElegido(cursoGuardado)
+completarDatosCurso()
+modificarHorario()
 mostrarTotal()
 
 // Creo constructor para guardar datos de usuario en un objeto
 class Usuario {
-    constructor (nombre, apellido, email, celular, horas, paquete, total){
-        this.nombre=nombre
-        this.apellido=apellido
-        this.email=email
-        this.celular=celular
-        this.horas=horas
-        this.paquete=paquete
-        this.total=total
+    constructor(nombre, apellido, email, celular, horas, paquete, total) {
+        this.nombre = nombre
+        this.apellido = apellido
+        this.email = email
+        this.celular = celular
+        this.horas = horas
+        this.paquete = paquete
+        this.total = total
     }
 }
 
@@ -95,9 +137,9 @@ function resumir() {
         let paquete = document.getElementById('forma-pago').value
         let mensaje = document.getElementById('mensaje-resumen')
 
-        const usuario = new Usuario (nombre, apellido, email, celular, horas, paquete, total)
+        const usuario = new Usuario(nombre, apellido, email, celular, horas, paquete, total)
 
-        localStorage.setItem("usuario", JSON.stringify(usuario))       
+        localStorage.setItem("usuario", JSON.stringify(usuario))
 
         mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>

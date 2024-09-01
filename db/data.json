@@ -5,9 +5,12 @@
         "descripcion": "Diseñado para principiantes que desean establecer una base sólida en el idioma. Al finalizar el curso, los estudiantes tendrán habilidades para comunicarse en situaciones cotidianas, comprender textos simples y expresar ideas básicas.",
         "precio": 7000,
         "profe": "Carla",
-        "dia1": "lunes, 18hs",
-        "dias2": "miercoles y viernes, 15hs",
-        "dias3": "martes y jueves, 17hs + sábado, 10hs"
+        "h1op1": "Lunes 9hs",
+        "h1op2": "Miercoles 14hs",
+        "h2op1": "Miercoles y Jueves 10hs",
+        "h2op2":"Lunes 15hs y Viernes 14hs",
+        "h3op1":"Miercoles, Viernes y Sábado 11hs",
+        "h3op2": "Martes y Jueves 17hs + Sábado 14hs"
     },
     {
         "id":2,
@@ -15,9 +18,12 @@
         "descripcion": "Dirigido a estudiantes que ya tienen un conocimiento básico del idioma y desean mejorar sus habilidades. Al completar el curso, los estudiantes podrán comunicarse con mayor confianza en una variedad de contextos, comprender textos más complejos y expresar ideas con mayor claridad.",
         "precio": 8000,
         "profe": "Gastón",
-        "dia1": "lunes, 17hs",
-        "dias2": "martes y jueves, 15hs",
-        "dias3": "miercoles y viernes, 16hs + sábado, 11hs"
+        "h1op1": "Lunes 10hs",
+        "h1op2": "Jueves 15hs",
+        "h2op1": "Martes y Jueves 11hs",
+        "h2op2": "Lunes y Jueves 16hs",
+        "h3op1": "Miercoles, Viernes y Sábado 10hs",
+        "h3op2": "Lunes, Miércoles y Viernes 19hs"
     },
     {
         "id":3,
@@ -25,9 +31,12 @@
         "descripcion": "Diseñado para estudiantes con un dominio sólido del idioma que buscan perfeccionar sus habilidades. Al finalizar el curso, los estudiantes serán capaces de comunicarse con fluidez y precisión en situaciones complejas, comprender textos y discursos sofisticados, y expresar ideas con claridad y coherencia.",
         "precio": 9000,
         "profe": "Johana",
-        "dia1": "martes, 19hs",
-        "dias2": "miercoles y viernes, 17hs",
-        "dias3": "lunes y jueves, 19hs + sábado, 12hs"
+        "h1op1": "Lunes 11hs",
+        "h1op2": "Miércoles 18hs",
+        "h2op1": "Martes y Jueves 9hs",
+        "h2op2":"Lunes y Viernes 18hs",
+        "h3op1":"Miércoles, Viernes y Sábado 9hs",
+        "h3op2": "Miércoles y Jueves 18hs + Sábado 14hs"
     },
     {
         "id":4,
@@ -35,8 +44,11 @@
         "descripcion": "Nos enfocamos en mejorar habilidades específicas requeridas para exámenes internacionales, como comprensión auditiva, expresión escrita, gramática avanzada y estrategias de examen. Utilizamos material auténtico de exámenes anteriores, simulacros de prueba y tutorías personalizadas.",
         "precio": 10000,
         "profe": "Johana",
-        "dia1": "miércoles, 19hs",
-        "dias2": "lunes de 15 a 17hs",
-        "dias3": "viernes de 18 a 21hs"
+        "h1op1": "Lunes 14-15hs",
+        "h1op2": "Jueves 14-15hs",
+        "h2op1": "Martes 15-17hs",
+        "h2op2": "Viernes 15-17hs",
+        "h3op1": "Miercoles 15-18hs",
+        "h3op2": "Sábado 11-13hs"
     }
 ]

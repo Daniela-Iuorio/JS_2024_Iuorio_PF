@@ -23,6 +23,9 @@
   align-items: center;
   flex-wrap: wrap; }
 
+.left {
+  justify-content: flex-start; }
+
 .flex-column, .home-content .home-main .courses_content, .home-content .home-main .courses_content .courses_card, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
   display: flex;
   flex-direction: column;
@@ -388,10 +391,8 @@ footer {
       margin-left: 0px; }
     .contenedor-autogestion .div-usuario .sub-div-usuario {
       align-items: flex-start; }
-    .contenedor-autogestion .div-usuario .user-form {
-      display: none; }
-      .contenedor-autogestion .div-usuario .user-form .user-form-input {
-        width: 90%; }
+    .contenedor-autogestion .div-usuario .user-form .user-form-input {
+      width: 90%; }
   .contenedor-autogestion .div-cursada {
     grid-area: course;
     margin: 10px;
