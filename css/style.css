@@ -388,6 +388,10 @@ footer {
       margin-left: 0px; }
     .contenedor-autogestion .div-usuario .sub-div-usuario {
       align-items: flex-start; }
+    .contenedor-autogestion .div-usuario .user-form {
+      display: none; }
+      .contenedor-autogestion .div-usuario .user-form .user-form-input {
+        width: 90%; }
   .contenedor-autogestion .div-cursada {
     grid-area: course;
     margin: 10px;
@@ -403,6 +407,10 @@ footer {
       margin-left: 0px; }
     .contenedor-autogestion .div-cursada p {
       padding-right: 10px; }
+    .contenedor-autogestion .div-cursada .schedule-form {
+      display: none; }
+    .contenedor-autogestion .div-cursada .underlined {
+      text-decoration: underline; }
   .contenedor-autogestion .div-facturacion {
     grid-area: payment;
     margin: 10px;

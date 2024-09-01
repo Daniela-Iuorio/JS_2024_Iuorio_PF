@@ -27,6 +27,12 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro);
+    .user-form{
+      display: none;
+      .user-form-input{
+        width: 90%;
+      }
+    }
   }
 
   .div-cursada {
@@ -46,6 +52,12 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro);
+    .schedule-form{
+      display: none;
+    }
+    .underlined{
+      text-decoration: underline;
+    }
   }
 
   .div-facturacion {

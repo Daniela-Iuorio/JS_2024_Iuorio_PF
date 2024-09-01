@@ -20,7 +20,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/EC favicon.png">
     <!-- JavaScript -->
-    <script defer src="../js/autogestion.js"></script>
+    <script defer src="../js/autogestion.js" type="module"></script>
 </head>
 
 <body>
@@ -60,7 +60,8 @@
             <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
             <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button>
             <h3>Welcome, <span class="span-strong" id="user-welcome">UserName</span>!</h3>
-            <div id="user-div-text" class="sub-div-usuario flex-column">
+            <!-- Texto para mostrar -->
+            <div id="user-info" class="sub-div-usuario flex-column">
                 <p>Nombre de Usuario: <span class="span-strong" id="user-name">NuevoUsuario</span></p>
                 <p>Nombre completo: <span class="span-strong" id="nombre-apellido">John Harris Doe</span></p>
                 <p>E-mail: <span class="span-strong" id="email">john-doe@gmail.com</span></p>
@@ -68,18 +69,41 @@
                 <button class="btn-modif-datos" id="modificar-datos-personales"><span
                         class="fa-solid fa-pencil"></span></button>
             </div>
+            <!-- Form para modificar -->
+            <form class="flex-column user-form" action="" method="post" id="actualizar-datos-personales">
+                <input type="text" id="user-username" class="user-form-input">
+                <input type="text" id="user-name-surname" class="user-form-input">
+                <input type="email" name="email" id="user-email" class="user-form-input">
+                <input type="text" name="mobile-phone" id="user-mobile-phone" class="user-form-input">
+                <div class="form-item">
+                    <input id="botonGuardarUsuario"
+                        class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
+                        value="Guardar">
+                </div>
+            </form>
         </div>
         <!-- Datos de Curso -->
         <div id="course-info-div" class="div-cursada flex-column">
             <h3>Cursando</h3>
             <p>Curso: <span class="span-strong" id="nombre-curso">Nombre de Curso</span></p>
-            <div id="horario" class="flex-row">
+            <div id="horario-info" class="flex-row">
                 <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
                 <button class="btn-modif-curso" id="modificar-curso"><span class="fa-solid fa-pencil"></span></button>
             </div>
+            <div id="horario-form" class="schedule-form">
+                <form class="flex-column" action="" method="post">
+                    <select name="horario" id="horario">
+                    <option value="" disabled>Seleccione una opción</option>
+                    <option id="value1" value="1"></option>
+                    <option id="value2" value="2"></option>
+                    <option id="value3" value="3"></option>
+                    </select>
+                    <input id="botonGuardarHorario" class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit" value="Guardar">
+                    </form>
+            </div>
             <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria">1, 2 o 3 horas</span>
             </p>
-            <p>Profesor/a: <span class="span-strong" id="profe-curso"></span></p>
+            <p>Profesor/a: <a href="./nosotros.html" class="underlined"><span class="span-strong" id="profe-curso"></span></a></p>
         </div>
         <!-- Datos de Facturación -->
         <div class="div-facturacion flex-column">
