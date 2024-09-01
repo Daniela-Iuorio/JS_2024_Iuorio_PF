@@ -107,12 +107,13 @@ mostrarTotal()
 
 // Creo constructor para guardar datos de usuario en un objeto
 class Usuario {
-    constructor(nombre, apellido, email, celular, horas, paquete, total) {
+    constructor(nombre, apellido, email, celular, horas, horario, paquete, total) {
         this.nombre = nombre
         this.apellido = apellido
         this.email = email
         this.celular = celular
         this.horas = horas
+        this.horario = horario
         this.paquete = paquete
         this.total = total
     }
@@ -134,17 +135,68 @@ function resumir() {
         let email = document.getElementById('email').value
         let celular = document.getElementById('cel').value
         let horas = document.getElementById('cantidad-horas').value
+        let horario = document.getElementById('horario-curso').value
         let paquete = document.getElementById('forma-pago').value
         let mensaje = document.getElementById('mensaje-resumen')
 
-        const usuario = new Usuario(nombre, apellido, email, celular, horas, paquete, total)
+        const usuario = new Usuario(nombre, apellido, email, celular, horas, horario, paquete, total)
 
         localStorage.setItem("usuario", JSON.stringify(usuario))
+
+        //Funcion para usar el texto de la opción de horario elegida en el resumen
+        let chosenSchedule
+        function completarHorario() {
+            switch (horas) {
+                case "1":
+                    switch (horario) {
+                        case "1":
+                            chosenSchedule = cursoGuardado.h1op1
+                            break
+                        case "2":
+                            chosenSchedule = cursoGuardado.h1op2
+                            break
+                        default:
+                            chosenSchedule = "No se eligió horario de cursada"
+                    }
+                    break;
+                case "2":
+                    switch (horario) {
+                        case "1":
+                            chosenSchedule = cursoGuardado.h2op1
+                            break
+                        case "2":
+                            chosenSchedule = cursoGuardado.h2op2
+                            break
+                        default:
+                            chosenSchedule = "No se eligió horario de cursada"
+                    }
+                    break;
+                case "3":
+                    switch (horario) {
+                        case "1":
+                            chosenSchedule = cursoGuardado.h3op1
+                            break
+                        case "2":
+                            chosenSchedule = cursoGuardado.h3op2
+                            break
+                        default:
+                            chosenSchedule = "No se eligió horario de cursada"
+                    }
+                    break;
+                default:
+                    chosenSchedule = "No se eligió horario de cursada"
+            }
+        }
+        completarHorario()
+
+        //Guardo chosenSchedule para reutilizar y no repetir función
+        localStorage.setItem("chosenSchedule", JSON.stringify(chosenSchedule))
 
         mensaje.innerHTML = `<h3>Inscripción exitosa!</h3>
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
 Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
 El monto total a abonar es de <span class="resaltado">$${total}</span>. <br><br>
+Elegiste esta opción de cursada: <span class="resaltado">${chosenSchedule}</span> , pero puedes modificarlo en la página Mi Aula. <br><br>
 Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si no recibes el correo, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
 ¡Te desamos un feliz comienzo de clases!
 </p>

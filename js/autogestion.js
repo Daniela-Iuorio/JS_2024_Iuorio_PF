@@ -1,13 +1,14 @@
 // Recupero datos de curso elegido y usuario
 let cursoElegido = JSON.parse(localStorage.getItem("cursoSeleccionado"))
 let usuarioGestion = JSON.parse(localStorage.getItem("usuario"))
+let chosenSchedule = JSON.parse(localStorage.getItem("chosenSchedule"))
 
 
 // Función para mostrar toda la info ingresada en la inscripción
 function completarDatosIniciales() {
 
     let nombreApellido = document.getElementById("nombre-apellido")
-    nombreApellido.innerText = usuarioGestion.nombre + usuarioGestion.apellido
+    nombreApellido.innerText = usuarioGestion.nombre +" " + usuarioGestion.apellido
 
     let eMail = document.getElementById("email")
     eMail.innerText = usuarioGestion.email
@@ -23,6 +24,9 @@ function completarDatosIniciales() {
 
     let cargaHoraria = document.getElementById("info-carga-horaria")
     cargaHoraria.innerText = usuarioGestion.horas
+
+    let horarioCursada = document.getElementById("schedule-curso")
+    horarioCursada.innerText = chosenSchedule
 
     let modalidadPago = document.getElementById("info-modalidad-pago")
     modalidadPago.innerText = usuarioGestion.paquete
