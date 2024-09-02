@@ -194,11 +194,10 @@ function resumir() {
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
 Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
 El monto total a abonar es de <span class="resaltado">$${total}</span>. <br><br>
-Elegiste esta opción de cursada: <span class="resaltado">${chosenSchedule}</span> , pero puedes modificarlo en la sección Autogestión. <br><br>
+Elegiste esta opción de cursada: <span class="resaltado">${chosenSchedule}</span>.<br><br>
 Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si no recibes el correo, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
-¡Te desamos un feliz comienzo de clases!
-</p>
-<button class="button btn btn-outline-success" id="boton-continuar">Continuar</button>`
+¡Te desamos un feliz comienzo de clases! <br><br> En unos segundos serás redirigido a la sección Autogestión.
+</p>`
         let formulario = document.getElementById('enrole-form')
         formulario.className = "no-display"
 
@@ -220,7 +219,7 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
             willClose: () => {
                 window.location.href = "./autogestion.html"
             }
-        })},15000)
+        })},10500)
 
     } else {
         let warning = document.getElementById('warning')
