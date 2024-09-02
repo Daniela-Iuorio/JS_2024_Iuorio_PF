@@ -1,103 +1,105 @@
 .contenedor-autogestion {
-  .warning0{
-    font-family: $fuente-contenido;
-    color: red;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  display: grid;
-  grid-template-areas:
-    "aviso aviso aviso"
-    "user course course"
-    "user payment payment";
-
-  .span-strong {
-    font-weight: bold;
-  }
   
-  .div-aviso{
-    grid-area: aviso;
-  }
+  .contenedor-grid {
+    display: grid;
+    grid-template-areas:
+      "aviso aviso aviso"
+      "user course course"
+      "user payment payment";
 
-  .div-usuario {
-    grid-area: user;
-    margin: 10px;
-    padding: 10px;
-    .avatar {
-      width: 130px;
-      border-radius: 64px;
+    .span-strong {
+      font-weight: bold;
     }
-    .left-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-    h3 {
-      text-align: left;
-      padding-left: 0px;
-      margin-left: 0px;
-    }
-    .sub-div-usuario {
-      align-items: flex-start;
-    }
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-shadow: 2px 2px 0px var(--verde-oscuro);
-    .user-form {
-      .user-form-input {
-        width: 90%;
+
+    .div-aviso {
+      grid-area: aviso;
+      .warning0 {
+        font-family: $fuente-contenido;
+        color: red;
+        font-weight: bold;
+        text-align: center;
       }
     }
-  }
 
-  .div-cursada {
-    grid-area: course;
-    margin: 10px;
-    align-items: flex-start;
-    justify-content: space-around;
-    padding: 10px;
-    .warning {
-      font-family: $fuente-contenido;
-      font-size: 16px;
-      color: red;
-      font-weight: 400;
+    .div-usuario {
+      grid-area: user;
+      margin: 10px;
+      padding: 10px;
+      .avatar {
+        width: 130px;
+        border-radius: 64px;
+      }
+      .left-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+      h3 {
+        text-align: left;
+        padding-left: 0px;
+        margin-left: 0px;
+      }
+      .sub-div-usuario {
+        align-items: flex-start;
+      }
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--verde-oscuro);
+      .user-form {
+        .user-form-input {
+          width: 90%;
+        }
+      }
     }
-    h3 {
-      text-align: left;
-      padding-left: 0px;
-      margin-left: 0px;
-    }
-    p {
-      padding-right: 10px;
-    }
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-shadow: 2px 2px 0px var(--verde-oscuro);
-    .schedule-form {
-      display: none;
-    }
-    .underlined {
-      text-decoration: underline;
-    }
-  }
 
-  .div-facturacion {
-    grid-area: payment;
-    margin: 10px;
-    align-items: flex-start;
-    justify-content: space-around;
-    padding: 10px;
-    h3 {
-      text-align: left;
-      padding-left: 0px;
-      margin-left: 0px;
+    .div-cursada {
+      grid-area: course;
+      margin: 10px;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding: 10px;
+      .warning {
+        font-family: $fuente-contenido;
+        font-size: 16px;
+        color: red;
+        font-weight: 400;
+      }
+      h3 {
+        text-align: left;
+        padding-left: 0px;
+        margin-left: 0px;
+      }
+      p {
+        padding-right: 10px;
+      }
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--verde-oscuro);
+      .schedule-form {
+        display: none;
+      }
+      .underlined {
+        text-decoration: underline;
+      }
     }
-    p {
-      padding-right: 10px;
+
+    .div-facturacion {
+      grid-area: payment;
+      margin: 10px;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding: 10px;
+      h3 {
+        text-align: left;
+        padding-left: 0px;
+        margin-left: 0px;
+      }
+      p {
+        padding-right: 10px;
+      }
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--verde-oscuro);
     }
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-shadow: 2px 2px 0px var(--verde-oscuro);
   }
 }

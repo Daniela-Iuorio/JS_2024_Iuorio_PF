@@ -138,47 +138,6 @@ footer {
       .home-content .home-main .courses_content .courses_card p {
         text-align: justify; }
 
-.resources .resources-content {
-  width: 700px;
-  margin: 0 auto; }
-  .resources .resources-content h2 {
-    animation-delay: 1s; }
-  .resources .resources-content .container .row {
-    justify-content: center;
-    align-items: end; }
-  .resources .resources-content .resources_columns {
-    animation-delay: 1.5s; }
-    .resources .resources-content .resources_columns a {
-      text-decoration: none;
-      color: black;
-      text-align: center; }
-  .resources .resources-content .games {
-    animation-delay: 2s; }
-    .resources .resources-content .games .games_link {
-      text-decoration: none;
-      text-align: center; }
-      .resources .resources-content .games .games_link .game-picture {
-        width: 230px;
-        height: 150px;
-        border: solid black 1px;
-        margin: 5px; }
-  .resources .resources-content .section-videos {
-    animation-delay: 2s; }
-    .resources .resources-content .section-videos .video {
-      width: 300px;
-      height: 200px;
-      margin: 20px; }
-    .resources .resources-content .section-videos .spotify-div {
-      text-align: center; }
-      .resources .resources-content .section-videos .spotify-div .spotify-iframe {
-        width: 310px;
-        height: 100px;
-        overflow: hidden; }
-
-@media (max-width: 550px) {
-  .resources .resources-content {
-    width: auto; } }
-
 .contact .contact-form {
   width: 600px;
   padding: 10px;
@@ -373,41 +332,41 @@ footer {
     position: sticky;
     left: 95%; } }
 
-.contenedor-autogestion {
+.contenedor-autogestion .contenedor-grid {
   display: grid;
   grid-template-areas: "aviso aviso aviso" "user course course" "user payment payment"; }
-  .contenedor-autogestion .warning0 {
-    font-family: "Alegreya Sans", sans-serif;
-    color: red;
-    font-weight: bold;
-    text-align: center; }
-  .contenedor-autogestion .span-strong {
+  .contenedor-autogestion .contenedor-grid .span-strong {
     font-weight: bold; }
-  .contenedor-autogestion .div-aviso {
+  .contenedor-autogestion .contenedor-grid .div-aviso {
     grid-area: aviso; }
-  .contenedor-autogestion .div-usuario {
+    .contenedor-autogestion .contenedor-grid .div-aviso .warning0 {
+      font-family: "Alegreya Sans", sans-serif;
+      color: red;
+      font-weight: bold;
+      text-align: center; }
+  .contenedor-autogestion .contenedor-grid .div-usuario {
     grid-area: user;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro); }
-    .contenedor-autogestion .div-usuario .avatar {
+    .contenedor-autogestion .contenedor-grid .div-usuario .avatar {
       width: 130px;
       border-radius: 64px; }
-    .contenedor-autogestion .div-usuario .left-row {
+    .contenedor-autogestion .contenedor-grid .div-usuario .left-row {
       display: flex;
       flex-direction: row;
       justify-content: flex-start; }
-    .contenedor-autogestion .div-usuario h3 {
+    .contenedor-autogestion .contenedor-grid .div-usuario h3 {
       text-align: left;
       padding-left: 0px;
       margin-left: 0px; }
-    .contenedor-autogestion .div-usuario .sub-div-usuario {
+    .contenedor-autogestion .contenedor-grid .div-usuario .sub-div-usuario {
       align-items: flex-start; }
-    .contenedor-autogestion .div-usuario .user-form .user-form-input {
+    .contenedor-autogestion .contenedor-grid .div-usuario .user-form .user-form-input {
       width: 90%; }
-  .contenedor-autogestion .div-cursada {
+  .contenedor-autogestion .contenedor-grid .div-cursada {
     grid-area: course;
     margin: 10px;
     align-items: flex-start;
@@ -416,22 +375,22 @@ footer {
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro); }
-    .contenedor-autogestion .div-cursada .warning {
+    .contenedor-autogestion .contenedor-grid .div-cursada .warning {
       font-family: "Alegreya Sans", sans-serif;
       font-size: 16px;
       color: red;
       font-weight: 400; }
-    .contenedor-autogestion .div-cursada h3 {
+    .contenedor-autogestion .contenedor-grid .div-cursada h3 {
       text-align: left;
       padding-left: 0px;
       margin-left: 0px; }
-    .contenedor-autogestion .div-cursada p {
+    .contenedor-autogestion .contenedor-grid .div-cursada p {
       padding-right: 10px; }
-    .contenedor-autogestion .div-cursada .schedule-form {
+    .contenedor-autogestion .contenedor-grid .div-cursada .schedule-form {
       display: none; }
-    .contenedor-autogestion .div-cursada .underlined {
+    .contenedor-autogestion .contenedor-grid .div-cursada .underlined {
       text-decoration: underline; }
-  .contenedor-autogestion .div-facturacion {
+  .contenedor-autogestion .contenedor-grid .div-facturacion {
     grid-area: payment;
     margin: 10px;
     align-items: flex-start;
@@ -440,9 +399,9 @@ footer {
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro); }
-    .contenedor-autogestion .div-facturacion h3 {
+    .contenedor-autogestion .contenedor-grid .div-facturacion h3 {
       text-align: left;
       padding-left: 0px;
       margin-left: 0px; }
-    .contenedor-autogestion .div-facturacion p {
+    .contenedor-autogestion .contenedor-grid .div-facturacion p {
       padding-right: 10px; }

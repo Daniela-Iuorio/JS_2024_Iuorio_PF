@@ -194,7 +194,7 @@ function resumir() {
 <p class="parrafo-mensaje">Gracias, <span class="resaltado">${nombre}</span>, por unirte a English Connection. <br><br>
 Has solicitado una suscripción al curso <span class="resaltado">${cursoGuardado.nombre}</span>, con una carga horaria de <span class="resaltado">${horas} horas</span> a la semana, y has elegido comprar el <span class="resaltado">paquete ${paquete}</span>. <br><br>
 El monto total a abonar es de <span class="resaltado">$${total}</span>. <br><br>
-Elegiste esta opción de cursada: <span class="resaltado">${chosenSchedule}</span> , pero puedes modificarlo en la página Mi Aula. <br><br>
+Elegiste esta opción de cursada: <span class="resaltado">${chosenSchedule}</span> , pero puedes modificarlo en la sección Autogestión. <br><br>
 Se enviarán los datos de medios de pago y detalle de la compra a la casilla de correo electrónico: <span class="resaltado">${email}</span>. Si no recibes el correo, por favor escríbenos a 'administración@english-connection.edu.ar'.<br><br>
 ¡Te desamos un feliz comienzo de clases!
 </p>
@@ -208,7 +208,7 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
         Swal.fire({
             position: 'top-end',
             title: 'Redireccionando...',
-            html: `Serás redirigido a "Mi Aula" en <b>${timer}</b> segundos.`,
+            html: `Serás redirigido a "Autogestión" en <b>${timer}</b> segundos.`,
             timer: timer * 1000,
             didOpen: () => {
                 const b = Swal.getHtmlContainer().querySelector('b')
