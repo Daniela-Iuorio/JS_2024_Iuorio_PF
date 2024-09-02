@@ -59,7 +59,7 @@ import { guardarDatosHorario } from './autogestion-curso.js'
 document.getElementById('modificar-curso').addEventListener('click', ()=>{modificarDiasHorarios(cursoElegido)})
 document.getElementById('horario-form').addEventListener('submit', (event)=>{
     event.preventDefault()
-    guardarDatosHorario(event, cursoElegido)
+    guardarDatosHorario()
 })
 
 //FACTURACION

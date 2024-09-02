@@ -50,7 +50,7 @@ export function guardarDatosPago() {
     if(nuevaCargaHoraria !== cantidadHorasInicial){
         let warning3 = document.getElementById('warning3')
         warning3.innerText = "*Elija el nuevo horario de cursada"
-        warning3.className = "warning"
+        warning3.className = "warning" 
     }
 
 

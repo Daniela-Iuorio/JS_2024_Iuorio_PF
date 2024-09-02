@@ -38,7 +38,10 @@ export function modificarDiasHorarios(cursoElegido) {
 
 // Función para guardar info Horario y mostrar
 
-export function guardarDatosHorario(cursoElegido) {
+export function guardarDatosHorario() {
+    let warning3 = document.getElementById('warning3')
+    warning3.className = "no-display"
+
     let horarioElegido = document.getElementById('horario').value
     let chosenSchedule 
     // Funcion para usar el texto de la opción elegida
