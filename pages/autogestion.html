@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/EC favicon.png">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- JavaScript -->
     <script defer src="../js/autogestion.js" type="module"></script>
 </head>
@@ -55,11 +57,14 @@
     </nav>
     <!-- End of Bootstrap NavBar -->
     <main class="main-autogestion contenedor-autogestion">
+        <div id="aviso" class="div-aviso no-display">
+        <p id="warning-autogestion" class="warning0">Para utilizar esta sección debe primero inscribirse en un curso desde la página de inicio.</p>
+    </div>
         <!-- Perfil de USUARIO -->
         <div id="user-div" class="div-usuario">
             <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
             <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button>
-            <div class="flex-row left">
+            <div class="left-row">
                 <h3>Usuario</h3>
                 <button class="btn-modif-datos" id="modificar-datos-personales"><span
                         class="fa-solid fa-pencil"></span></button>
@@ -76,9 +81,10 @@
                     <input type="text" id="user-name-surname" class="user-form-input">
                     <input type="email" name="email" id="user-email" class="user-form-input">
                     <input type="text" name="mobile-phone" id="user-mobile-phone" class="user-form-input">
-                    <div class="form-item">
-                        <input class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
-                            value="Guardar">
+                    <!-- Botones -->
+                    <div class="flex-row">
+                        <input id="guardar-usuario" class="sin-borde btn btn-success" type="button" value="Guardar">
+                        <button id="cancelar-usuario" class="btn btn-outline-success">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -101,8 +107,11 @@
                         <option id="horario1" value="1"></option>
                         <option id="horario2" value="2"></option>
                     </select>
-                    <input class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
-                        value="Guardar">
+                    <!-- Botones -->
+                    <div class="flex-row">
+                        <input id="guardar-curso" class="sin-borde btn btn-success" type="button" value="Guardar">
+                        <button id="cancelar-curso" class="btn btn-outline-success">Cancelar</button>
+                    </div>
                 </form>
             </div>
             <p>Profesor/a: <a href="./nosotros.html" class="underlined"><span class="span-strong"
@@ -123,14 +132,14 @@
             </div>
             <!-- Form para modificar -->
             <div id="div-pago-form" class="no-display">
-                <form id="pago-form" action="" method="post" class="flex-column">
+                <form id="pago-form" action="" method="post" class="flex-column left">
                     <!-- Modalidad de Pago -->
                     <label for="pago">Modalidad de Pago:</label>
                     <select name="opciones-pago" id="pago">
                         <option value="" disabled>Seleccione una opción</option>
-                        <option id="value1" value="1">Semanal</option>
-                        <option id="value2" value="2">Mensual</option>
-                        <option id="value3" value="3">Trimestral</option>
+                        <option id="value1" value="semanal">Semanal</option>
+                        <option id="value2" value="mensual">Mensual</option>
+                        <option id="value3" value="trimestral">Trimestral</option>
                     </select>
                     <!-- Carga Horaria -->
                     <label for="carga-horaria">Carga horaria: </label>
@@ -140,8 +149,11 @@
                         <option value="2">2 horas semanales</option>
                         <option value="3">3 horas semanales</option>
                     </select>
-                    <input class="contact-form-item contact_button sin-borde btn btn-outline-success" type="submit"
-                        value="Guardar">
+                    <!-- Botones -->
+                    <div class="flex-row">
+                        <input id="guardar-facturacion" class="sin-borde btn btn-success" type="button" value="Guardar">
+                        <button id="cancelar-facturacion" class="btn btn-outline-success">Cancelar</button>
+                    </div>
                 </form>
             </div>
             <p>Valor: <span class="span-strong" id="info-total-pagar">0.000,00</span></p>
@@ -164,6 +176,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

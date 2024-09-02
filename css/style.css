@@ -23,14 +23,14 @@
   align-items: center;
   flex-wrap: wrap; }
 
-.left {
-  justify-content: flex-start; }
-
 .flex-column, .home-content .home-main .courses_content, .home-content .home-main .courses_content .courses_card, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .flex-column .left, .home-content .home-main .courses_content .left, .nosotros .nosotros-content #carouselExample .carousel-inner .carousel-item .teacher .left {
+    justify-content: flex-start;
+    align-items: flex-start; }
 
 .resaltado {
   font-weight: bold; }
@@ -43,6 +43,9 @@ button, .contact .contact-form .form-item .contact_button, .contact .contact-con
 
 .button-bg-color {
   background-color: rgba(146, 236, 73, 0.247); }
+
+.btn {
+  margin: 5px; }
 
 a {
   color: black;
@@ -372,9 +375,16 @@ footer {
 
 .contenedor-autogestion {
   display: grid;
-  grid-template-areas: "user course course" "user payment payment"; }
+  grid-template-areas: "aviso aviso aviso" "user course course" "user payment payment"; }
+  .contenedor-autogestion .warning0 {
+    font-family: "Alegreya Sans", sans-serif;
+    color: red;
+    font-weight: bold;
+    text-align: center; }
   .contenedor-autogestion .span-strong {
     font-weight: bold; }
+  .contenedor-autogestion .div-aviso {
+    grid-area: aviso; }
   .contenedor-autogestion .div-usuario {
     grid-area: user;
     margin: 10px;
@@ -385,6 +395,10 @@ footer {
     .contenedor-autogestion .div-usuario .avatar {
       width: 130px;
       border-radius: 64px; }
+    .contenedor-autogestion .div-usuario .left-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; }
     .contenedor-autogestion .div-usuario h3 {
       text-align: left;
       padding-left: 0px;

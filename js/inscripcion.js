@@ -203,23 +203,24 @@ Se enviarán los datos de medios de pago y detalle de la compra a la casilla de 
         formulario.className = "no-display"
 
         //SweetAlert con cuenta regresiva para avisar el redireccionamiento
+        setTimeout(()=>{
         let timer = 10;
         Swal.fire({
             position: 'top-end',
             title: 'Redireccionando...',
-            html: `Serás redirigido en <b>${timer}</b> segundos.`,
+            html: `Serás redirigido a "Mi Aula" en <b>${timer}</b> segundos.`,
             timer: timer * 1000,
             didOpen: () => {
-                const b = Swal.getHtmlContainer().querySelector('b');
+                const b = Swal.getHtmlContainer().querySelector('b')
                 const interval = setInterval(() => {
-                    timer--;
-                    b.textContent = timer;
-                }, 1000);
+                    timer--
+                    b.textContent = timer
+                }, 1000)
             },
             willClose: () => {
-                window.location.href = "./autogestion.html";
+                window.location.href = "./autogestion.html"
             }
-        })
+        })},15000)
 
     } else {
         let warning = document.getElementById('warning')

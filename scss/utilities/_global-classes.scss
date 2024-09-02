@@ -13,15 +13,17 @@
     flex-wrap: wrap;
 }
 
-.left{
-    justify-content: flex-start;
-}
+
 
 .flex-column{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .left{
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
 
 .resaltado {
@@ -38,6 +40,10 @@ button {
 
 .button-bg-color{
     background-color: rgba(146, 236, 73, 0.247);
+}
+
+.btn {
+    margin: 5px;
 }
 
 

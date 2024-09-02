@@ -1,3 +1,4 @@
+try{
 // Recupero datos de curso elegido y usuario
 let cursoElegido = JSON.parse(localStorage.getItem("cursoSeleccionado"))
 let usuarioGestion = JSON.parse(localStorage.getItem("usuario"))
@@ -35,8 +36,11 @@ function completarDatosIniciales() {
     primerTotal.innerHTML = "$" + usuarioGestion.total
 
 }
-
 completarDatosIniciales()
+}catch(err){
+    console.error("No se completaron los datos", err)
+    document.getElementById('aviso').style.display = 'block'
+}
 
 //Usuario puede realizar MODIFICACIONES por SECCION (usuario, curso, facturación)
 
@@ -44,33 +48,48 @@ completarDatosIniciales()
 import './autogestion-usuario.js'
 import { mostrarFormularioEdicion } from './autogestion-usuario.js'
 import { guardarInfoUsuario } from './autogestion-usuario.js'
+import { cancelarEdicionUsuario } from './autogestion-usuario.js'
 
 //Asigno evento a botones de sección Usuario
-document.getElementById('modificar-datos-personales').addEventListener('click', mostrarFormularioEdicion)
-document.getElementById('actualizar-datos-personales').addEventListener('submit', guardarInfoUsuario)
+document.getElementById('modificar-datos-personales').onclick=(event)=>{mostrarFormularioEdicion()}
+document.getElementById('guardar-usuario').onclick=(event)=>{
+    event.preventDefault()
+    guardarInfoUsuario()
+}
+document.getElementById('cancelar-usuario').onclick=(event)=>{
+    event.preventDefault()
+    cancelarEdicionUsuario()}
 
 
 //CURSO
 import './autogestion-curso.js'
 import { modificarDiasHorarios } from './autogestion-curso.js'
 import { guardarDatosHorario } from './autogestion-curso.js'
+import { cancelarEdicionCurso } from './autogestion-curso.js'
 
 //Asigno evento a botones de sección Curso
-document.getElementById('modificar-curso').addEventListener('click', ()=>{modificarDiasHorarios(cursoElegido)})
-document.getElementById('horario-form').addEventListener('submit', (event)=>{
+document.getElementById('modificar-curso').onclick=()=>{modificarDiasHorarios(cursoElegido)}
+document.getElementById('guardar-curso').onclick=(event)=>{
     event.preventDefault()
     guardarDatosHorario()
-})
+}
+document.getElementById('cancelar-curso').onclick=(event)=>{
+    event.preventDefault()
+    cancelarEdicionCurso()}
 
 //FACTURACION
 import './autogestion-pago.js'
 import { modificarPago } from './autogestion-pago.js'
 import { guardarDatosPago } from './autogestion-pago.js'
+import { cancelarEdicionPago } from './autogestion-pago.js'
 
 //Asigno evento a los botones de sección Facturación
-document.getElementById('modificar-pago').addEventListener('click', function () {modificarPago()})
-document.getElementById('pago-form').addEventListener('submit', function (event) {
+document.getElementById('modificar-pago').onclick=()=>{modificarPago()}
+document.getElementById('guardar-facturacion').onclick=(event)=> {
     event.preventDefault()
     guardarDatosPago()
-})
+}
+document.getElementById('cancelar-facturacion').onclick=(event)=>{
+    event.preventDefault()
+    cancelarEdicionPago()}
 
