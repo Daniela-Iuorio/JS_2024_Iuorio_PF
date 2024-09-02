@@ -57,7 +57,7 @@ export function guardarInfoUsuario(event) {
     usuarioGestion.email = guardarValores[1]
     usuarioGestion.celular = guardarValores[2]
 
-    localStorage.setItem("usuarioGestion", JSON.stringify(usuarioGestion))
+    localStorage.setItem("usuario", JSON.stringify(usuarioGestion))
 
     //Oculto formulario y muestro texto con info actualizada
     document.getElementById('user-info').style.display = 'block'

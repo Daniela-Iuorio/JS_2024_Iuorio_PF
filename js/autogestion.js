@@ -63,6 +63,14 @@ document.getElementById('horario-form').addEventListener('submit', (event)=>{
 })
 
 //FACTURACION
-// import './autogestion-pago.js'
+import './autogestion-pago.js'
+import { modificarPago } from './autogestion-pago.js'
+import { guardarDatosPago } from './autogestion-pago.js'
 
+//Asigno evento a los botones de sección Facturación
+document.getElementById('modificar-pago').addEventListener('click', function () {modificarPago()})
+document.getElementById('pago-form').addEventListener('submit', function (event) {
+    event.preventDefault()
+    guardarDatosPago()
+})
 

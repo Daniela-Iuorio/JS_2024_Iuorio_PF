@@ -1,3 +1,5 @@
+let usuarioGestion = JSON.parse(localStorage.getItem('usuario'))
+console.log(usuarioGestion)
 
 //Función para habilitar la modificación de días de cursada
 export function modificarDiasHorarios(cursoElegido) {
@@ -7,45 +9,62 @@ export function modificarDiasHorarios(cursoElegido) {
     document.getElementById('div-horario-form').style.display = 'flex'
 
     //Opciones de cursada según curso elegido
-    document.getElementById('value1').innerText = cursoElegido.dia1
-    document.getElementById('value2').innerText = cursoElegido.dias2
-     
+    let cantidadHoras = document.getElementById('info-carga-horaria').innerText
+    let opcion1 = document.getElementById('horario1')
+    let opcion2 = document.getElementById('horario2')
 
+    function mostrarOpciones() {
+        switch (cantidadHoras) {
+            case "1":
+                opcion1.innerText = cursoElegido.h1op1
+                opcion2.innerText = cursoElegido.h1op2
+                break;
+            case "2":
+                opcion1.innerText = cursoElegido.h2op1
+                opcion2.innerText = cursoElegido.h2op2
+                break;
+            case "3":
+                opcion1.innerText = cursoElegido.h3op1
+                opcion2.innerText = cursoElegido.h3op2
+                break;
+            default:
+                opcion1.innerText = "Opción 1"
+                opcion2.innerText = "Opción 2"
+        }
+    }
+    mostrarOpciones()
 }
-
 
 
 // Función para guardar info Horario y mostrar
 
 export function guardarDatosHorario(cursoElegido) {
-
-        // Obtengo el elemento <select>
-        const selectElement = document.getElementById('horario')
-
-        // Obtengo el índice de la opción seleccionada
-        const selectedIndex = selectElement.selectedIndex
-    
-        // Obtengo el texto de la opción seleccionada
-        const diaHorario = selectElement.options[selectedIndex].text
-
-    //Guardo en localStorage
-    localStorage.setItem("horarioCursada", JSON.stringify(diaHorario))
-    localStorage.setItem("nuevaCargaHoraria", JSON.stringify(selectElement.value))
-
-    let horario = JSON.parse(localStorage.getItem("horarioCursada"))
-    let cargaHoraria = JSON.parse(localStorage.getItem("nuevaCargaHoraria"))
-
-    if (horario && cargaHoraria) {
-        try{
-        // Actualizo la informacion
-        document.getElementById('schedule-curso').innerText = horario
-        document.getElementById('info-carga-horaria').innerText = cargaHoraria
-
-        // Muestro la información y oculto el formulario
-        document.getElementById('horario-info').style.display = 'block';
-        document.getElementById('horario-form').style.display = 'none';
-    }catch(err){
-        mensaje = "No hay datos guardados de carga horaria."
+    let horarioElegido = document.getElementById('horario').value
+    let chosenSchedule 
+    // Funcion para usar el texto de la opción elegida
+    function contenidoOpcion(){
+        switch(horarioElegido){
+            case "1":
+                chosenSchedule = document.getElementById('horario1').innerText
+                break
+            case "2":
+                chosenSchedule = document.getElementById('horario2').innerText
+            break
+            default:
+                chosenSchedule = "Horario elegido"
+        }
     }
-    }
+    contenidoOpcion()
+
+    //Actualizo la info en localStorage
+    usuarioGestion.horario = horarioElegido
+    localStorage.setItem('usuario', JSON.stringify(usuarioGestion))
+    console.log(usuarioGestion)
+
+    // Actualizo la informacion mostrada en interfaz
+    document.getElementById('schedule-curso').innerText = chosenSchedule
+
+    // Muestro la información y oculto el formulario
+    document.getElementById('horario-info').style.display = 'block';
+    document.getElementById('div-horario-form').style.display = 'none';
 }

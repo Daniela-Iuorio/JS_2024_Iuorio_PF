@@ -141,7 +141,7 @@ function resumir() {
 
         localStorage.setItem("usuario", JSON.stringify(usuario))
 
-        //Funcion para usar el texto de la opción de horario elegida en el resumen
+        //Funcion para usar el texto de la opción de horario elegida
         let chosenSchedule
         function completarHorario() {
             switch (horas) {

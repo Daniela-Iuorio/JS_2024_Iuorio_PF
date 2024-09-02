@@ -402,6 +402,11 @@ footer {
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 2px 2px 0px var(--verde-oscuro); }
+    .contenedor-autogestion .div-cursada .warning {
+      font-family: "Alegreya Sans", sans-serif;
+      font-size: 16px;
+      color: red;
+      font-weight: 400; }
     .contenedor-autogestion .div-cursada h3 {
       text-align: left;
       padding-left: 0px;
