@@ -8,7 +8,7 @@ let chosenSchedule = JSON.parse(localStorage.getItem("chosenSchedule"))
 function completarDatosIniciales() {
 
     let nombreApellido = document.getElementById("nombre-apellido")
-    nombreApellido.innerText = usuarioGestion.nombre +" " + usuarioGestion.apellido
+    nombreApellido.innerText = usuarioGestion.nombre
 
     let eMail = document.getElementById("email")
     eMail.innerText = usuarioGestion.email
@@ -42,6 +42,13 @@ completarDatosIniciales()
 
 //USUARIO
 import './autogestion-usuario.js'
+import { mostrarFormularioEdicion } from './autogestion-usuario.js'
+import { guardarInfoUsuario } from './autogestion-usuario.js'
+
+//Asigno evento a botones de sección Usuario
+document.getElementById('modificar-datos-personales').addEventListener('click', mostrarFormularioEdicion)
+document.getElementById('actualizar-datos-personales').addEventListener('submit', guardarInfoUsuario)
+
 
 //CURSO
 import './autogestion-curso.js'

@@ -107,9 +107,8 @@ mostrarTotal()
 
 // Creo constructor para guardar datos de usuario en un objeto
 class Usuario {
-    constructor(nombre, apellido, email, celular, horas, horario, paquete, total) {
+    constructor(nombre, email, celular, horas, horario, paquete, total) {
         this.nombre = nombre
-        this.apellido = apellido
         this.email = email
         this.celular = celular
         this.horas = horas
@@ -131,7 +130,6 @@ function resumir() {
     if (todosCompletos) {
         let total = calcularTotal()
         let nombre = document.getElementById('nombre').value
-        let apellido = document.getElementById('apellido').value
         let email = document.getElementById('email').value
         let celular = document.getElementById('cel').value
         let horas = document.getElementById('cantidad-horas').value
@@ -139,7 +137,7 @@ function resumir() {
         let paquete = document.getElementById('forma-pago').value
         let mensaje = document.getElementById('mensaje-resumen')
 
-        const usuario = new Usuario(nombre, apellido, email, celular, horas, horario, paquete, total)
+        const usuario = new Usuario(nombre, email, celular, horas, horario, paquete, total)
 
         localStorage.setItem("usuario", JSON.stringify(usuario))
 

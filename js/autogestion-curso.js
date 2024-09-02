@@ -4,12 +4,12 @@ export function modificarDiasHorarios(cursoElegido) {
 
     //Muestro formulario, oculto texto informativo
     document.getElementById('horario-info').style.display = 'none'
-    document.getElementById('horario-form').style.display = 'flex'
+    document.getElementById('div-horario-form').style.display = 'flex'
 
     //Opciones de cursada según curso elegido
     document.getElementById('value1').innerText = cursoElegido.dia1
     document.getElementById('value2').innerText = cursoElegido.dias2
-    document.getElementById('value3').innerText = cursoElegido.dias3  
+     
 
 }
 
