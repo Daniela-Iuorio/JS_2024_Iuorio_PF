@@ -68,7 +68,7 @@ import { guardarDatosHorario } from './autogestion-curso.js'
 import { cancelarEdicionCurso } from './autogestion-curso.js'
 
 //Asigno evento a botones de sección Curso
-document.getElementById('modificar-curso').onclick=()=>{modificarDiasHorarios(cursoElegido)}
+document.getElementById('modificar-curso').onclick=()=>{modificarDiasHorarios()}
 document.getElementById('guardar-curso').onclick=(event)=>{
     event.preventDefault()
     guardarDatosHorario()

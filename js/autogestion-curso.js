@@ -1,5 +1,7 @@
 //Función para habilitar la modificación de días de cursada
-export function modificarDiasHorarios(cursoElegido) {
+export function modificarDiasHorarios() {
+
+    let cursoElegido = JSON.parse(localStorage.getItem('cursoSeleccionado'))
 
     //Muestro formulario, oculto texto informativo
     document.getElementById('horario-info').style.display = 'none'
