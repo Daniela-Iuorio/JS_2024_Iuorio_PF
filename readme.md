@@ -8,6 +8,3 @@ Ruta sugerida para probar funcionalidades:
 - Una vez en Autogestión:
     - Probar modificaciones en las tres secciones
     - Clickear el nombre del profe (redirige a página Nosotros)
-
-Aclaración: 
-    La página Contacto no está incluida en el navbar pero la dejé en los archivos para utilizarla más adelante cuando complete el proyecto para el portfolio
