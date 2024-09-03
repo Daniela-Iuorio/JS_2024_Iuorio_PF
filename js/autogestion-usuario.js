@@ -84,5 +84,3 @@ export function cancelarEdicionUsuario() {
     document.getElementById('user-info').style.display = 'block'
     document.getElementById('div-user-form').style.display = 'none'
 }
-
-
