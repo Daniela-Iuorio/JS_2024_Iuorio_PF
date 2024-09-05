@@ -16,7 +16,11 @@ export function modificarPago() {
     cantidadHorasInicial = document.getElementById('carga-horaria').value
     localStorage.setItem('horasIniciales', JSON.stringify(cantidadHorasInicial))
     }catch(err){
-        console.error("Error:", err)
+        Swal.fire({
+            icon: "error",
+            text: "Falta información, por favor, vuelva el formulario de inscripción.",
+          })
+
     }
 }
 
@@ -84,7 +88,11 @@ export function guardarDatosPago() {
         warning3.className = "warning" 
     }
     }catch(err){
-        console.error("Error:", err)
+        Swal.fire({
+            icon: "error",
+            text: "No se guardaron los cambios.",
+          })
+
     }
     
     //Oculto formulario, muestro texto informativo

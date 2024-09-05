@@ -34,7 +34,10 @@ export function modificarDiasHorarios() {
         }
         mostrarOpciones()
     } catch (err) {
-        console.error("Error:", err)
+        Swal.fire({
+            icon: "error",
+            text: "No se ha seleccionado ningún curso.",
+          })
     }
 }
 
@@ -67,12 +70,15 @@ export function guardarDatosHorario() {
     let usuarioGestion = JSON.parse(localStorage.getItem('usuario'))
     usuarioGestion.horario = horarioElegido
     localStorage.setItem('usuario', JSON.stringify(usuarioGestion))
-    console.log(usuarioGestion)
+ 
     let originalSchedule = JSON.parse(localStorage.getItem('chosenSchedule'))
     originalSchedule = chosenSchedule
     localStorage.setItem('chosenSchedule', JSON.stringify(originalSchedule))
     }catch(err){
-        console.error("Error:", err)
+        Swal.fire({
+            icon: "error",
+            text: "No se guardaron los cambios",
+          })
     }
 
     // Actualizo la informacion mostrada en interfaz

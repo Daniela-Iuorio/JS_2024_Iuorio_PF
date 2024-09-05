@@ -58,7 +58,11 @@ export function guardarInfoUsuario() {
 
     localStorage.setItem("usuario", JSON.stringify(usuarioGestion))
     }catch(err){
-        console.error("Error:", err)
+        Swal.fire({
+            icon: "error",
+            text: "No se guardaron los cambios",
+          })
+
     }
 
     //Oculto formulario y muestro texto con info actualizada

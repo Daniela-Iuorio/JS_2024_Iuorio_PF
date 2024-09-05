@@ -6,7 +6,6 @@ fetch("./db/data.json")
 .then(data=>{
     arrayCursos = data
     renderCursos(data)
-    console.log(data)
 })
 
 // Creo cards para mostrar en página inicio

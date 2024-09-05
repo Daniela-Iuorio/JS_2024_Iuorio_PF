@@ -38,7 +38,11 @@ function completarDatosIniciales() {
 }
 completarDatosIniciales()
 }catch(err){
-    console.error("No se completaron los datos", err)
+    Swal.fire({
+        icon: "error",
+        text: "No se completaron los datos"
+      })
+
     document.getElementById('aviso').style.display = 'block'
 }
 

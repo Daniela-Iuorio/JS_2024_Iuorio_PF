@@ -21,6 +21,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../resources/EC favicon.png">
     <!-- Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JavaScript -->
     <script defer src="../js/autogestion.js" type="module"></script>
 </head>
@@ -61,108 +63,111 @@
             <h1>AUTOGESTION</h1>
         </div>
         <div class="contenedor-grid">
-        <div id="aviso" class="div-aviso no-display">
-        <p id="warning-autogestion" class="warning0">Para utilizar esta sección debe primero inscribirse en un curso desde la página de inicio.</p>
-    </div>
-        <!-- Perfil de USUARIO -->
-        <div id="user-div" class="div-usuario"> 
-            <!-- <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
+            <div id="aviso" class="div-aviso no-display">
+                <p id="warning-autogestion" class="warning0">Para utilizar esta sección debe primero inscribirse en un
+                    curso desde la página de inicio.</p>
+            </div>
+            <!-- Perfil de USUARIO -->
+            <div id="user-div" class="div-usuario">
+                <!-- <img class="avatar" id="user-avatar" src="../resources/avatars/no-avatar.png" alt="avatar de usuario">
             <button id="modificar-avatar"><span class="fa-solid fa-camera"></span></button> -->
-            <div class="left-row">
-                <h3>Usuario</h3>
-                <button class="btn-modif-datos" id="modificar-datos-personales"><span
-                        class="fa-solid fa-pencil"></span></button>
+                <div class="left-row">
+                    <h3>Usuario</h3>
+                    <button class="btn-modif-datos" id="modificar-datos-personales"><span
+                            class="fa-solid fa-pencil"></span></button>
+                </div>
+                <!-- Texto para mostrar -->
+                <div id="user-info" class="sub-div-usuario flex-column">
+                    <p>Nombre completo: <span class="span-strong" id="nombre-apellido"></span></p>
+                    <p>E-mail: <span class="span-strong" id="email"></span></p>
+                    <p>Phone number: <span class="span-strong" id="celu"></span></p>
+                </div>
+                <!-- Form para modificar -->
+                <div id="div-user-form" class="no-display">
+                    <form class="flex-column user-form no-display" action="" method="post"
+                        id="actualizar-datos-personales">
+                        <input type="text" id="user-name-surname" class="user-form-input">
+                        <input type="email" name="email" id="user-email" class="user-form-input">
+                        <input type="text" name="mobile-phone" id="user-mobile-phone" class="user-form-input">
+                        <!-- Botones -->
+                        <div class="flex-row">
+                            <input id="guardar-usuario" class="sin-borde btn btn-success" type="button" value="Guardar">
+                            <button id="cancelar-usuario" class="btn btn-outline-success">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- Texto para mostrar -->
-            <div id="user-info" class="sub-div-usuario flex-column">
-                <p>Nombre completo: <span class="span-strong" id="nombre-apellido">John Harris Doe</span></p>
-                <p>E-mail: <span class="span-strong" id="email">john-doe@gmail.com</span></p>
-                <p>Phone number: <span class="span-strong" id="celu">+54 9 11 134 5678</span></p>
+            <!-- Datos de CURSO -->
+            <div id="course-info-div" class="div-cursada flex-column">
+                <h3>Cursada</h3>
+                <p>Curso: <span class="span-strong" id="nombre-curso"></span></p>
+                <!-- Texto para mostrar -->
+                <div id="horario-info" class="flex-row">
+                    <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
+                    <button class="btn-modif-curso" id="modificar-curso"><span
+                            class="fa-solid fa-pencil"></span></button>
+                </div>
+                <p id="warning3"></p>
+                <!-- Form para modificar -->
+                <div id="div-horario-form" class="schedule-form no-display">
+                    <form id="horario-form" class="flex-column" action="" method="post">
+                        <select name="horario" id="horario">
+                            <option value="" disabled>Seleccione una opción</option>
+                            <option id="horario1" value="1"></option>
+                            <option id="horario2" value="2"></option>
+                        </select>
+                        <!-- Botones -->
+                        <div class="flex-row">
+                            <input id="guardar-curso" class="sin-borde btn btn-success" type="button" value="Guardar">
+                            <button id="cancelar-curso" class="btn btn-outline-success">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                <p>Profesor/a: <a href="./nosotros.html" class="underlined"><span class="span-strong"
+                            id="profe-curso"></span></a></p>
             </div>
-            <!-- Form para modificar -->
-            <div id="div-user-form" class="no-display">
-                <form class="flex-column user-form no-display" action="" method="post" id="actualizar-datos-personales">
-                    <input type="text" id="user-name-surname" class="user-form-input">
-                    <input type="email" name="email" id="user-email" class="user-form-input">
-                    <input type="text" name="mobile-phone" id="user-mobile-phone" class="user-form-input">
-                    <!-- Botones -->
-                    <div class="flex-row">
-                        <input id="guardar-usuario" class="sin-borde btn btn-success" type="button" value="Guardar">
-                        <button id="cancelar-usuario" class="btn btn-outline-success">Cancelar</button>
-                    </div>
-                </form>
+            <!-- Datos de FACTURACION -->
+            <div class="div-facturacion flex-column">
+                <div class="flex-row left">
+                    <h3>Facturación</h3>
+                    <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
+                </div>
+                <!-- Texto para mostrar -->
+                <div id="info-pago">
+                    <p>Modalidad de pago: <span class="span-strong" id="info-modalidad-pago"></span></p>
+                    <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria"></span>
+                    </p>
+                </div>
+                <!-- Form para modificar -->
+                <div id="div-pago-form" class="no-display">
+                    <form id="pago-form" action="" method="post" class="flex-column left">
+                        <!-- Modalidad de Pago -->
+                        <label for="pago">Modalidad de Pago:</label>
+                        <select name="opciones-pago" id="pago">
+                            <option value="" disabled>Seleccione una opción</option>
+                            <option id="value1" value="semanal">Semanal</option>
+                            <option id="value2" value="mensual">Mensual</option>
+                            <option id="value3" value="trimestral">Trimestral</option>
+                        </select>
+                        <!-- Carga Horaria -->
+                        <label for="carga-horaria">Carga horaria: </label>
+                        <select name="opciones-carga-horaria" id="carga-horaria" class="campo-completo">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="1">1 hora semanal</option>
+                            <option value="2">2 horas semanales</option>
+                            <option value="3">3 horas semanales</option>
+                        </select>
+                        <!-- Botones -->
+                        <div class="flex-row">
+                            <input id="guardar-facturacion" class="sin-borde btn btn-success" type="button"
+                                value="Guardar">
+                            <button id="cancelar-facturacion" class="btn btn-outline-success">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                <p>Valor: <span class="span-strong" id="info-total-pagar"></span></p>
             </div>
         </div>
-        <!-- Datos de CURSO -->
-        <div id="course-info-div" class="div-cursada flex-column">
-            <h3>Cursada</h3>
-            <p>Curso: <span class="span-strong" id="nombre-curso">Nombre de Curso</span></p>
-            <!-- Texto para mostrar -->
-            <div id="horario-info" class="flex-row">
-                <p class="horario-cursada">Días y horario: <span class="span-strong" id="schedule-curso"></span></p>
-                <button class="btn-modif-curso" id="modificar-curso"><span class="fa-solid fa-pencil"></span></button>
-            </div>
-            <p id="warning3"></p>
-            <!-- Form para modificar -->
-            <div id="div-horario-form" class="schedule-form no-display">
-                <form id="horario-form" class="flex-column" action="" method="post">
-                    <select name="horario" id="horario">
-                        <option value="" disabled>Seleccione una opción</option>
-                        <option id="horario1" value="1"></option>
-                        <option id="horario2" value="2"></option>
-                    </select>
-                    <!-- Botones -->
-                    <div class="flex-row">
-                        <input id="guardar-curso" class="sin-borde btn btn-success" type="button" value="Guardar">
-                        <button id="cancelar-curso" class="btn btn-outline-success">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <p>Profesor/a: <a href="./nosotros.html" class="underlined"><span class="span-strong"
-                        id="profe-curso"></span></a></p>
-        </div>
-        <!-- Datos de FACTURACION -->
-        <div class="div-facturacion flex-column">
-            <div class="flex-row left">
-                <h3>Facturación</h3>
-                <button id="modificar-pago"><span class="fa-solid fa-pencil"></span></button>
-            </div>
-            <!-- Texto para mostrar -->
-            <div id="info-pago">
-                <p>Modalidad de pago: <span class="span-strong" id="info-modalidad-pago">semanal, mensual,
-                        trimestral</span></p>
-                <p>Cantidad de horas semanales: <span class="span-strong" id="info-carga-horaria"></span>
-                </p>
-            </div>
-            <!-- Form para modificar -->
-            <div id="div-pago-form" class="no-display">
-                <form id="pago-form" action="" method="post" class="flex-column left">
-                    <!-- Modalidad de Pago -->
-                    <label for="pago">Modalidad de Pago:</label>
-                    <select name="opciones-pago" id="pago">
-                        <option value="" disabled>Seleccione una opción</option>
-                        <option id="value1" value="semanal">Semanal</option>
-                        <option id="value2" value="mensual">Mensual</option>
-                        <option id="value3" value="trimestral">Trimestral</option>
-                    </select>
-                    <!-- Carga Horaria -->
-                    <label for="carga-horaria">Carga horaria: </label>
-                    <select name="opciones-carga-horaria" id="carga-horaria" class="campo-completo">
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="1">1 hora semanal</option>
-                        <option value="2">2 horas semanales</option>
-                        <option value="3">3 horas semanales</option>
-                    </select>
-                    <!-- Botones -->
-                    <div class="flex-row">
-                        <input id="guardar-facturacion" class="sin-borde btn btn-success" type="button" value="Guardar">
-                        <button id="cancelar-facturacion" class="btn btn-outline-success">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            <p>Valor: <span class="span-strong" id="info-total-pagar">0.000,00</span></p>
-        </div>
-    </div>
     </main>
     <!-- Footer -->
     <footer>
